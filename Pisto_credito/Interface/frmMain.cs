@@ -21,5 +21,10 @@ namespace Pisto_credito.Interface
         {
 
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

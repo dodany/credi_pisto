@@ -13,7 +13,7 @@ namespace Pisto_credito.src.BD
     class clConexion
     {
 
-        public static String connectionString()
+        public  String connectionString()
         {
             return "Data Source = ICONC220\\SQLEXPRESS;"
             + "Initial Catalog = CrediDB; Integrated Security = True";
@@ -22,11 +22,11 @@ namespace Pisto_credito.src.BD
         /// SQL CONEXION
         /// </summary>
         /// <returns></returns>
-        public static SqlConnection Conn()
+        public  SqlConnection Conn()
         {
             SqlConnection cn = new SqlConnection("Data Source = ICONC220\\SQLEXPRESS;"
             + "Initial Catalog = CrediDB; Integrated Security = True");
-            cn.Open();
+            //cn.Open();
 
             return cn;
         }
@@ -37,7 +37,7 @@ namespace Pisto_credito.src.BD
         /// <param name="strSP"></param>
         /// <param name="intOPcion"></param>
         /// <returns> dt FILL con los DATOS </returns>
-        public static DataTable Select(String strSP, 
+        public  DataTable Select(String strSP, 
                                        int intOPcion)
         {
             DataTable dt = new DataTable("Consulta");
@@ -83,7 +83,7 @@ namespace Pisto_credito.src.BD
       /// <param name="arlDatos"></param>
       /// <param name="blnId"></param>
       /// <returns>DOUBLE -- EL VALOR MAXIMO INSERTADO</returns>
-        public static Double Insert ( String strSP , 
+        public  Double Insert ( String strSP , 
                                        int intOpcion,  
                                        ArrayList arlParametros,
                                        ArrayList arlDatos,
