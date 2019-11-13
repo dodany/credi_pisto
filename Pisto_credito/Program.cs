@@ -17,7 +17,7 @@ namespace Pisto_credito
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmUsuario());
+            Application.Run(new frmMainMenu());
         }
     }
 }

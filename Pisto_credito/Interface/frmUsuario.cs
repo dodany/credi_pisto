@@ -14,6 +14,9 @@ namespace Pisto_credito.Interface
 {
     public partial class frmUsuario : Form
     {
+
+        clConexion cl = new clConexion();
+      
         public frmUsuario()
         {
             InitializeComponent();
@@ -23,7 +26,7 @@ namespace Pisto_credito.Interface
         private void consultaUsuarios()
         {
             DataTable dt = new DataTable();
-            clConexion cl = new clConexion( );
+            
 
             dt = cl.Select("sp_usuario", 2);
             
@@ -34,13 +37,19 @@ namespace Pisto_credito.Interface
                 {
                     reader.Read();
 
+                    String pass = reader["pass"].ToString();
                     
-                    Console.WriteLine("Usuario ->" + reader[1].ToString());
+
+                    Console.WriteLine("Usuario ->" + pass);
+                    
 
                 }
             }
-
         }
+
+
+
+       
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,7 +59,13 @@ namespace Pisto_credito.Interface
 
         private void frmUsuario_Load(object sender, EventArgs e)
         {
-            consultaUsuarios();
+            //consultaUsuarios();
+         
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
