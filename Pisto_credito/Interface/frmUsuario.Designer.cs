@@ -34,7 +34,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnDeshabilitar = new System.Windows.Forms.Button();
-            this.dtg = new System.Windows.Forms.DataGridView();
+            this.dtgUsuario = new System.Windows.Forms.DataGridView();
             this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,13 +56,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.txt_correo = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dtg)).BeginInit();
+            this.btnHabilitar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgUsuario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReporte
             // 
-            this.btnReporte.Location = new System.Drawing.Point(574, 449);
+            this.btnReporte.Location = new System.Drawing.Point(506, 466);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(143, 43);
             this.btnReporte.TabIndex = 33;
@@ -80,35 +81,38 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(411, 449);
+            this.btnEditar.Location = new System.Drawing.Point(343, 466);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(143, 43);
             this.btnEditar.TabIndex = 28;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(250, 449);
+            this.btnEliminar.Location = new System.Drawing.Point(182, 466);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(143, 43);
             this.btnEliminar.TabIndex = 27;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnDeshabilitar
             // 
-            this.btnDeshabilitar.Location = new System.Drawing.Point(79, 449);
+            this.btnDeshabilitar.Location = new System.Drawing.Point(282, 421);
             this.btnDeshabilitar.Name = "btnDeshabilitar";
-            this.btnDeshabilitar.Size = new System.Drawing.Size(143, 43);
+            this.btnDeshabilitar.Size = new System.Drawing.Size(96, 32);
             this.btnDeshabilitar.TabIndex = 26;
             this.btnDeshabilitar.Text = "Deshabilitar";
             this.btnDeshabilitar.UseVisualStyleBackColor = true;
+            this.btnDeshabilitar.Click += new System.EventHandler(this.btnDeshabilitar_Click);
             // 
-            // dtg
+            // dtgUsuario
             // 
-            this.dtg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idUsuario,
             this.nombre,
             this.usuario,
@@ -117,10 +121,13 @@
             this.estado,
             this.idRol,
             this.fechaIngreso});
-            this.dtg.Location = new System.Drawing.Point(49, 251);
-            this.dtg.Name = "dtg";
-            this.dtg.Size = new System.Drawing.Size(714, 156);
-            this.dtg.TabIndex = 25;
+            this.dtgUsuario.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgUsuario.Location = new System.Drawing.Point(49, 251);
+            this.dtgUsuario.Name = "dtgUsuario";
+            this.dtgUsuario.Size = new System.Drawing.Size(714, 156);
+            this.dtgUsuario.TabIndex = 25;
+            this.dtgUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_CellContentClick);
+            this.dtgUsuario.SelectionChanged += new System.EventHandler(this.dtgUsuario_SelectionChanged);
             // 
             // idUsuario
             // 
@@ -206,6 +213,7 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuarios";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label6
             // 
@@ -232,6 +240,7 @@
             this.cmb_idRol.Name = "cmb_idRol";
             this.cmb_idRol.Size = new System.Drawing.Size(138, 21);
             this.cmb_idRol.TabIndex = 17;
+            this.cmb_idRol.SelectedIndexChanged += new System.EventHandler(this.cmb_idRol_SelectedIndexChanged);
             // 
             // txt_contraseña
             // 
@@ -273,6 +282,7 @@
             this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label3
             // 
@@ -297,23 +307,34 @@
             this.txt_correo.Size = new System.Drawing.Size(139, 20);
             this.txt_correo.TabIndex = 10;
             // 
+            // btnHabilitar
+            // 
+            this.btnHabilitar.Location = new System.Drawing.Point(436, 421);
+            this.btnHabilitar.Name = "btnHabilitar";
+            this.btnHabilitar.Size = new System.Drawing.Size(96, 32);
+            this.btnHabilitar.TabIndex = 34;
+            this.btnHabilitar.Text = "Habilitar";
+            this.btnHabilitar.UseVisualStyleBackColor = true;
+            this.btnHabilitar.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 567);
+            this.Controls.Add(this.btnHabilitar);
             this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnDeshabilitar);
-            this.Controls.Add(this.dtg);
+            this.Controls.Add(this.dtgUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmUsuario";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmUsuario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgUsuario)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -329,7 +350,7 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnDeshabilitar;
-        private System.Windows.Forms.DataGridView dtg;
+        private System.Windows.Forms.DataGridView dtgUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
@@ -351,5 +372,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.TextBox txt_correo;
+        private System.Windows.Forms.Button btnHabilitar;
     }
 }

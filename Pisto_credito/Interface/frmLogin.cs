@@ -30,34 +30,11 @@ namespace Pisto_credito.Interface
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            grabarUsuario();
+           
                 
         }
 
-        private void grabarUsuario()
-        {
-            ArrayList parametros = new ArrayList();
-            parametros.Add("12");
-            parametros.Add("Pedro");
-            parametros.Add("pedrito");
-            parametros.Add("pedrito@gmail.com");
-            parametros.Add("pedro123");
-            parametros.Add("1");
-            parametros.Add("3");
-            parametros.Add("2019-11-13      ");
-
-            ArrayList datos = new ArrayList();
-            datos.Add("@idUsuario");
-            datos.Add("@nombre");
-            datos.Add("@usuario");
-            datos.Add("@correo");
-            datos.Add("@pass");
-            datos.Add("@estado");
-            datos.Add("@idRol");
-            datos.Add("@fechaIngreso");
-
-            cl.Insert("sp_usuario",3, parametros, datos, false);
-        }
+       
 
         private void consultaLogin()
         {
@@ -86,6 +63,7 @@ namespace Pisto_credito.Interface
                 {
 
                     // frmMainMenu.menuStrip1.Enabled = true; 
+                   
                     this.Hide();
                 }
                 else
@@ -99,7 +77,7 @@ namespace Pisto_credito.Interface
             {
                 MessageBox.Show("Sin datos");
             }
-
+                    
             }
 
 
