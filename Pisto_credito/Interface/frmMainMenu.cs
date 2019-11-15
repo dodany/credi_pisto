@@ -12,20 +12,33 @@ namespace Pisto_credito.Interface
 {
     public partial class frmMainMenu : Form
     {
+        public static frmMainMenu mdiObj;
         public frmMainMenu()
         {
             InitializeComponent();
+            
+
         }
 
         
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
+
+            menuStrip1.Enabled = false;
+
             frmLogin frmLogin = new frmLogin();
             frmLogin.MdiParent = this;
+           
             frmLogin.Show();
-        }
+            mdiObj = this;
+            
 
+
+
+
+        }
+        
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
            
@@ -36,6 +49,28 @@ namespace Pisto_credito.Interface
             frmUsuario frmU = new frmUsuario();
             frmU.MdiParent = this;
             frmU.Show();
+        }
+
+        private void permisos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void cToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMainMenu frmMain = new frmMainMenu();
+            this.Hide();
+            frmMain.Show();
         }
     }
     

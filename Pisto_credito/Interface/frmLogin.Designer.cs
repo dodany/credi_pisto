@@ -87,6 +87,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(182, 20);
             this.txtUser.TabIndex = 12;
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // frmLogin
             // 
