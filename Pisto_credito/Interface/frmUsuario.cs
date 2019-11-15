@@ -96,6 +96,8 @@ namespace Pisto_credito.Interface
 
         public void editarUsuario()
         {
+          
+
             ArrayList parametros = new ArrayList();
             ArrayList datos = new ArrayList();
 
@@ -105,7 +107,7 @@ namespace Pisto_credito.Interface
             parametros.Add(txt_correo.Text);
             parametros.Add(txt_contraseña.Text);
             parametros.Add(cmb_idRol.SelectedValue);
-
+           
             datos.Add("@idUsuario");
             datos.Add("@nombre");
             datos.Add("@usuario");
@@ -116,7 +118,7 @@ namespace Pisto_credito.Interface
             try
             {
                 cl.SelectWithParameters("sp_usuario", 3, parametros, datos);
-                MessageBox.Show("El registro se ha editado correctamente ", "Editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               // MessageBox.Show("El registro se ha editado correctamente ", "Editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
             {
@@ -146,6 +148,8 @@ namespace Pisto_credito.Interface
 
         private void frmUsuario_Load(object sender, EventArgs e)
         {
+           
+            
             llenarCombo();
             dtgUsuario.DataSource = cl.Select("sp_usuario", 2);
             cmb_idRol.Text = "Elegir una opcion";
@@ -295,6 +299,11 @@ namespace Pisto_credito.Interface
             {
 
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
