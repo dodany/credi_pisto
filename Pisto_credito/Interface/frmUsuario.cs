@@ -126,10 +126,7 @@ namespace Pisto_credito.Interface
                   " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void mostrarDatosParaEditar()
         {
@@ -304,6 +301,12 @@ namespace Pisto_credito.Interface
         private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
+        private void button1_Click(object sender, EventArgs e)
+            {
+
+            }
+        
     }
 }

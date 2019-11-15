@@ -72,6 +72,14 @@ namespace Pisto_credito.Interface
             this.Hide();
             frmMain.Show();
         }
+
+        private void verProspectosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProspecto frmP = new frmProspecto();
+            frmP.MdiParent = this;
+            frmP.Show();
+
+        }
     }
     
 }
