@@ -31,6 +31,7 @@
             this.usuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prospectos = new System.Windows.Forms.ToolStripMenuItem();
+            this.verProspectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verificarProspectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.evaluacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientes = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +44,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verProspectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,11 +72,19 @@
             this.prospectos.Size = new System.Drawing.Size(85, 21);
             this.prospectos.Text = "Prospectos";
             // 
+            // verProspectosToolStripMenuItem
+            // 
+            this.verProspectosToolStripMenuItem.Name = "verProspectosToolStripMenuItem";
+            this.verProspectosToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.verProspectosToolStripMenuItem.Text = "Ver Prospectos";
+            this.verProspectosToolStripMenuItem.Click += new System.EventHandler(this.verProspectosToolStripMenuItem_Click);
+            // 
             // verificarProspectosToolStripMenuItem
             // 
             this.verificarProspectosToolStripMenuItem.Name = "verificarProspectosToolStripMenuItem";
             this.verificarProspectosToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.verificarProspectosToolStripMenuItem.Text = "Evaluar Prospectos";
+            this.verificarProspectosToolStripMenuItem.Click += new System.EventHandler(this.verificarProspectosToolStripMenuItem_Click);
             // 
             // evaluacionesToolStripMenuItem
             // 
@@ -118,6 +126,7 @@
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
             this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verProductosToolStripMenuItem.Text = "Ver Productos";
+            this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
             // 
             // permisos
             // 
@@ -168,13 +177,6 @@
             this.cToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.cToolStripMenuItem.Text = "Cerrar Sesión";
             this.cToolStripMenuItem.Click += new System.EventHandler(this.cToolStripMenuItem_Click);
-            // 
-            // verProspectosToolStripMenuItem
-            // 
-            this.verProspectosToolStripMenuItem.Name = "verProspectosToolStripMenuItem";
-            this.verProspectosToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.verProspectosToolStripMenuItem.Text = "Ver Prospectos";
-            this.verProspectosToolStripMenuItem.Click += new System.EventHandler(this.verProspectosToolStripMenuItem_Click);
             // 
             // frmMainMenu
             // 

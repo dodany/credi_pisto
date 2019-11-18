@@ -68,6 +68,7 @@
             this.btnReporte.TabIndex = 33;
             this.btnReporte.Text = "Reporte";
             this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Visible = false;
             // 
             // button5
             // 

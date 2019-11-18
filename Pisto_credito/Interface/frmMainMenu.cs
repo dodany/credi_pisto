@@ -80,6 +80,22 @@ namespace Pisto_credito.Interface
             frmP.Show();
 
         }
+
+        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProducto frmProducto = new frmProducto();
+            frmProducto.MdiParent = this;
+            frmProducto.Show();
+           
+        }
+
+        private void verificarProspectosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEvaluarProspectos frmEvaluar = new frmEvaluarProspectos();
+            frmEvaluar.MdiParent = this;
+            frmEvaluar.Show();
+
+        }
     }
     
 }
