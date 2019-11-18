@@ -197,14 +197,9 @@ namespace Pisto_credito.Interface
 
         private void llenarCombo()
         {
-           
             cmb_idRol.DataSource = cl.Select("sp_usuario", 6);
             cmb_idRol.ValueMember = "idRol";
             cmb_idRol.DisplayMember = "rol";
-
-
-
-
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -270,7 +265,7 @@ namespace Pisto_credito.Interface
         {
             mostrarDatosParaEditar();
         }
-
+      
         private void button1_Click_1(object sender, EventArgs e)
         {
             DialogResult result1 = MessageBox.Show("¿Esta seguro de que desea Habilitar al usuario " + ObtenerId() + " ?",
