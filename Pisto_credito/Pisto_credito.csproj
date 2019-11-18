@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\frmProspecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\frmProspecto.Designer.cs">
+      <DependentUpon>frmProspecto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interface\frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interface\frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\frmProspecto.resx">
+      <DependentUpon>frmProspecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>

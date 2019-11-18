@@ -31,7 +31,6 @@
             this.usuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prospectos = new System.Windows.Forms.ToolStripMenuItem();
-            this.verProspectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verificarProspectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.evaluacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientes = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +43,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verProspectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             // agregarUsuariosToolStripMenuItem
             // 
             this.agregarUsuariosToolStripMenuItem.Name = "agregarUsuariosToolStripMenuItem";
-            this.agregarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.agregarUsuariosToolStripMenuItem.Text = "Ver Usuarios";
             this.agregarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.agregarUsuariosToolStripMenuItem_Click);
             // 
@@ -71,12 +71,6 @@
             this.prospectos.Name = "prospectos";
             this.prospectos.Size = new System.Drawing.Size(85, 21);
             this.prospectos.Text = "Prospectos";
-            // 
-            // verProspectosToolStripMenuItem
-            // 
-            this.verProspectosToolStripMenuItem.Name = "verProspectosToolStripMenuItem";
-            this.verProspectosToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.verProspectosToolStripMenuItem.Text = "Ver Prospectos";
             // 
             // verificarProspectosToolStripMenuItem
             // 
@@ -122,7 +116,7 @@
             // verProductosToolStripMenuItem
             // 
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
-            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verProductosToolStripMenuItem.Text = "Ver Productos";
             // 
             // permisos
@@ -171,9 +165,16 @@
             // cToolStripMenuItem
             // 
             this.cToolStripMenuItem.Name = "cToolStripMenuItem";
-            this.cToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.cToolStripMenuItem.Text = "Cerrar Sesión";
             this.cToolStripMenuItem.Click += new System.EventHandler(this.cToolStripMenuItem_Click);
+            // 
+            // verProspectosToolStripMenuItem
+            // 
+            this.verProspectosToolStripMenuItem.Name = "verProspectosToolStripMenuItem";
+            this.verProspectosToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.verProspectosToolStripMenuItem.Text = "Ver Prospectos";
+            this.verProspectosToolStripMenuItem.Click += new System.EventHandler(this.verProspectosToolStripMenuItem_Click);
             // 
             // frmMainMenu
             // 
@@ -200,7 +201,6 @@
         private System.Windows.Forms.ToolStripMenuItem usuarios;
         private System.Windows.Forms.ToolStripMenuItem agregarUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prospectos;
-        private System.Windows.Forms.ToolStripMenuItem verProspectosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verificarProspectosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem evaluacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientes;
@@ -213,5 +213,6 @@
         public System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem verProspectosToolStripMenuItem;
     }
 }

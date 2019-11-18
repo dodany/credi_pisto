@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnReporte = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -344,8 +343,6 @@
         }
 
         #endregion
-
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnEditar;
