@@ -91,7 +91,6 @@ namespace Pisto_credito.Interface
                 id = Convert.ToInt32(row    .Cells["idUsuario"].Value);
             }
             return id;
-
         }
 
         public void editarUsuario()
@@ -188,7 +187,7 @@ namespace Pisto_credito.Interface
 
             }
             catch(System.Data.SqlClient.SqlException) {
-                MessageBox.Show("¡Error! La operacion no ha se completado con exito!",
+                MessageBox.Show("¡Error! La operacion no se ha completado con exito!",
                  "Operacion Fallida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 

@@ -16,6 +16,7 @@ namespace Pisto_credito
     {
         clConexion cl = new clConexion();
         public int id;
+        
         public frmProspecto()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace Pisto_credito
             ArrayList parametros = new ArrayList();
             ArrayList datos = new ArrayList();
 
+           // datos.Add("@idProspecto");
             datos.Add("@nombre");
             datos.Add("@dpi");
             datos.Add("@nit");
@@ -40,6 +42,9 @@ namespace Pisto_credito
             datos.Add("@telTrabajo");
             datos.Add("@idProducto");
 
+
+
+            //parametros.Add(cl.Select("sp_prospecto",7));
             parametros.Add(txt_nombre.Text);
             parametros.Add(txt_dpi.Text);
             parametros.Add(txt_nit.Text);
@@ -232,7 +237,7 @@ namespace Pisto_credito
             }
             catch (System.Data.SqlClient.SqlException)
             {
-                MessageBox.Show("¡Error! La operacion no ha se completado con exito!",
+                MessageBox.Show("¡Error! La operacion no se ha completado con exito!",
                  "Operacion Fallida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
            
@@ -257,6 +262,11 @@ namespace Pisto_credito
         private void dtgProspecto_SelectionChanged_1(object sender, EventArgs e)
         {
             mostrarDatosParaEditar();
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
