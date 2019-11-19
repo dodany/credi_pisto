@@ -72,6 +72,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProspecto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -79,7 +80,7 @@
             // 
             // btnReporte
             // 
-            this.btnReporte.Location = new System.Drawing.Point(783, 562);
+            this.btnReporte.Location = new System.Drawing.Point(802, 600);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(143, 43);
             this.btnReporte.TabIndex = 42;
@@ -100,7 +101,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(597, 562);
+            this.btnEditar.Location = new System.Drawing.Point(598, 562);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(143, 43);
             this.btnEditar.TabIndex = 39;
@@ -110,7 +111,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(412, 562);
+            this.btnEliminar.Location = new System.Drawing.Point(779, 561);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(143, 43);
             this.btnEliminar.TabIndex = 38;
@@ -471,11 +472,22 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "Telefono 2:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(350, 561);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(210, 44);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "Evaluar Prospectos";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmProspecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 655);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btnEditar);
@@ -543,5 +555,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn edad;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.Button button1;
     }
 }

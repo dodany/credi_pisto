@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pisto_credito.Interface;
 
 namespace Pisto_credito
 {
@@ -110,12 +111,6 @@ namespace Pisto_credito
         }
 
 
-      
-
-
-     
-
-
         public void eliminarProspecto()
         {
             ArrayList parametros = new ArrayList();
@@ -143,12 +138,8 @@ namespace Pisto_credito
         }
         public void editarProspecto()
         {
-
-
             ArrayList parametros = new ArrayList();
             ArrayList datos = new ArrayList();
-
-          
 
             datos.Add("@idProspecto");
             datos.Add("@nombre");
@@ -190,8 +181,6 @@ namespace Pisto_credito
 
         private void mostrarDatosParaEditar()
         {
-
-
             DataGridViewRow row = dtgProspecto.CurrentRow;
 
             txt_nombre.Text = Convert.ToString(row.Cells["nombre"].Value);
@@ -205,7 +194,6 @@ namespace Pisto_credito
             txt_telDomicilio.Text = Convert.ToString(row.Cells["telDomicilio"].Value);
             txt_telTrabajo.Text = Convert.ToString(row.Cells["telTrabajo"].Value);
             cmb_producto.Text = Convert.ToString(row.Cells["idProducto"].Value);
-
 
         }
 
@@ -266,6 +254,29 @@ namespace Pisto_credito
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            evaluacion();
+        
+        }
+
+        private void evaluacion()
+        {
+            ArrayList parametro = new ArrayList();
+            ArrayList dato = new ArrayList();
+
+            dato.Add("@idProspecto");
+            parametro.Add(ObtenerId());
+
+
+            //frmEvaluarProspectos.mdiObj.dtg_Evaluacion.DataSource = cl.Insert("sp_evaluacion1", 4, parametro, dato, false);
+            // frmEvaluarProspectos.mdiObj2.txt_dpi.Text="XD";
+            frmEvaluarProspectos frmEvaluarProspecto = new frmEvaluarProspectos();
+            frmEvaluarProspecto.Show();
 
         }
     }

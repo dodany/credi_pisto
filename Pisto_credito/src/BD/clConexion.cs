@@ -169,6 +169,7 @@ namespace Pisto_credito.src.BD
                 cmd.Parameters.AddWithValue("@Opcion",intOpcion);
 
 
+
                 for ( int i=0; i <= arlParametros.Count -1; i++)
                 {
                     cmd.Parameters.AddWithValue(arlDatos[i].ToString(), arlParametros[i].ToString() );

@@ -9,7 +9,8 @@ namespace Pisto_credito
 {
     static class Program
     {
-      
+        public static String DPI;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

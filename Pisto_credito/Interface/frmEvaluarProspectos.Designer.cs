@@ -47,6 +47,7 @@
             this.txt_dpi.Name = "txt_dpi";
             this.txt_dpi.Size = new System.Drawing.Size(174, 20);
             this.txt_dpi.TabIndex = 0;
+            this.txt_dpi.TextChanged += new System.EventHandler(this.txt_dpi_TextChanged);
             // 
             // label1
             // 
@@ -75,10 +76,11 @@
             this.nombre,
             this.dpi,
             this.estado});
-            this.dtg_Evaluacion.Location = new System.Drawing.Point(24, 198);
+            this.dtg_Evaluacion.Location = new System.Drawing.Point(63, 196);
             this.dtg_Evaluacion.Name = "dtg_Evaluacion";
-            this.dtg_Evaluacion.Size = new System.Drawing.Size(573, 60);
+            this.dtg_Evaluacion.Size = new System.Drawing.Size(491, 60);
             this.dtg_Evaluacion.TabIndex = 38;
+            this.dtg_Evaluacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_Evaluacion_CellContentClick);
             // 
             // idProspecto
             // 
@@ -107,12 +109,13 @@
             // 
             // btnEvaluar
             // 
-            this.btnEvaluar.Location = new System.Drawing.Point(229, 327);
+            this.btnEvaluar.Location = new System.Drawing.Point(229, 330);
             this.btnEvaluar.Name = "btnEvaluar";
             this.btnEvaluar.Size = new System.Drawing.Size(165, 42);
             this.btnEvaluar.TabIndex = 39;
             this.btnEvaluar.Text = "Evaluar Prospecto";
             this.btnEvaluar.UseVisualStyleBackColor = true;
+            this.btnEvaluar.Click += new System.EventHandler(this.btnEvaluar_Click);
             // 
             // btnBuscar
             // 
@@ -145,16 +148,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txt_dpi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dtg_Evaluacion;
         private System.Windows.Forms.Button btnEvaluar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProspecto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn dpi;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        public System.Windows.Forms.DataGridView dtg_Evaluacion;
+        public System.Windows.Forms.TextBox txt_dpi;
     }
 }
