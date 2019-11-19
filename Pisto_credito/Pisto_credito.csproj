@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\frmEvaluacion1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\frmEvaluacion1.Designer.cs">
+      <DependentUpon>frmEvaluacion1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\frmEvaluacion2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\frmEvaluacion2.Designer.cs">
+      <DependentUpon>frmEvaluacion2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\frmEvaluacion3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\frmEvaluacion3.Designer.cs">
+      <DependentUpon>frmEvaluacion3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interface\frmEvaluarProspectos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +103,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\BD\clConexion.cs" />
+    <EmbeddedResource Include="Interface\frmEvaluacion1.resx">
+      <DependentUpon>frmEvaluacion1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\frmEvaluacion2.resx">
+      <DependentUpon>frmEvaluacion2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\frmEvaluacion3.resx">
+      <DependentUpon>frmEvaluacion3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interface\frmEvaluarProspectos.resx">
       <DependentUpon>frmEvaluarProspectos.cs</DependentUpon>
     </EmbeddedResource>

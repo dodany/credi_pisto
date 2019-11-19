@@ -32,12 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtg_Evaluacion = new System.Windows.Forms.DataGridView();
-            this.btnEvaluar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.idProspecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dpi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEvaluar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Evaluacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,29 +75,10 @@
             this.nombre,
             this.dpi,
             this.estado});
-            this.dtg_Evaluacion.Location = new System.Drawing.Point(61, 206);
+            this.dtg_Evaluacion.Location = new System.Drawing.Point(24, 198);
             this.dtg_Evaluacion.Name = "dtg_Evaluacion";
-            this.dtg_Evaluacion.Size = new System.Drawing.Size(493, 60);
+            this.dtg_Evaluacion.Size = new System.Drawing.Size(573, 60);
             this.dtg_Evaluacion.TabIndex = 38;
-            // 
-            // btnEvaluar
-            // 
-            this.btnEvaluar.Location = new System.Drawing.Point(229, 327);
-            this.btnEvaluar.Name = "btnEvaluar";
-            this.btnEvaluar.Size = new System.Drawing.Size(165, 42);
-            this.btnEvaluar.TabIndex = 39;
-            this.btnEvaluar.Text = "Evaluar Prospecto";
-            this.btnEvaluar.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(424, 127);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(100, 34);
-            this.btnBuscar.TabIndex = 40;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // idProspecto
             // 
@@ -123,6 +104,25 @@
             this.estado.DataPropertyName = "estado";
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
+            // 
+            // btnEvaluar
+            // 
+            this.btnEvaluar.Location = new System.Drawing.Point(229, 327);
+            this.btnEvaluar.Name = "btnEvaluar";
+            this.btnEvaluar.Size = new System.Drawing.Size(165, 42);
+            this.btnEvaluar.TabIndex = 39;
+            this.btnEvaluar.Text = "Evaluar Prospecto";
+            this.btnEvaluar.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(424, 127);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(100, 34);
+            this.btnBuscar.TabIndex = 40;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // frmEvaluarProspectos
             // 
