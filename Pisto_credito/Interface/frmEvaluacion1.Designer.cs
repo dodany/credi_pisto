@@ -34,14 +34,14 @@
             this.btn_Aprobar = new System.Windows.Forms.Button();
             this.btn_desaprobar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_tel1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txt_tel2 = new System.Windows.Forms.TextBox();
-            this.txt_telDomicilio = new System.Windows.Forms.TextBox();
             this.txt_telTrabajo = new System.Windows.Forms.TextBox();
+            this.txt_telDomicilio = new System.Windows.Forms.TextBox();
+            this.txt_tel2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_tel1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.txt_dpi = new System.Windows.Forms.TextBox();
             this.txt_nit = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,8 +57,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txt_edad = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_idProspecto = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.txt_idProspecto = new System.Windows.Forms.TextBox();
             this.dtgProspecto = new System.Windows.Forms.DataGridView();
             this.idProspecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +73,7 @@
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProspecto)).BeginInit();
@@ -145,39 +146,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Telefonos";
             // 
-            // label8
+            // txt_telTrabajo
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(256, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Telefono 2:";
+            this.txt_telTrabajo.Location = new System.Drawing.Point(597, 37);
+            this.txt_telTrabajo.Name = "txt_telTrabajo";
+            this.txt_telTrabajo.Size = new System.Drawing.Size(119, 20);
+            this.txt_telTrabajo.TabIndex = 31;
             // 
-            // label10
+            // txt_telDomicilio
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(442, 20);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 13);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Tel. Domicilio:";
+            this.txt_telDomicilio.Location = new System.Drawing.Point(417, 37);
+            this.txt_telDomicilio.Name = "txt_telDomicilio";
+            this.txt_telDomicilio.Size = new System.Drawing.Size(119, 20);
+            this.txt_telDomicilio.TabIndex = 29;
             // 
-            // label7
+            // txt_tel2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(95, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 13);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Telefono 1:";
-            // 
-            // txt_tel1
-            // 
-            this.txt_tel1.Location = new System.Drawing.Point(68, 37);
-            this.txt_tel1.Name = "txt_tel1";
-            this.txt_tel1.Size = new System.Drawing.Size(112, 20);
-            this.txt_tel1.TabIndex = 28;
+            this.txt_tel2.Location = new System.Drawing.Point(229, 37);
+            this.txt_tel2.Name = "txt_tel2";
+            this.txt_tel2.Size = new System.Drawing.Size(119, 20);
+            this.txt_tel2.TabIndex = 30;
             // 
             // label9
             // 
@@ -188,26 +176,39 @@
             this.label9.TabIndex = 23;
             this.label9.Text = "Tel. Trabajo:";
             // 
-            // txt_tel2
+            // txt_tel1
             // 
-            this.txt_tel2.Location = new System.Drawing.Point(229, 37);
-            this.txt_tel2.Name = "txt_tel2";
-            this.txt_tel2.Size = new System.Drawing.Size(119, 20);
-            this.txt_tel2.TabIndex = 30;
+            this.txt_tel1.Location = new System.Drawing.Point(68, 37);
+            this.txt_tel1.Name = "txt_tel1";
+            this.txt_tel1.Size = new System.Drawing.Size(112, 20);
+            this.txt_tel1.TabIndex = 28;
             // 
-            // txt_telDomicilio
+            // label7
             // 
-            this.txt_telDomicilio.Location = new System.Drawing.Point(417, 37);
-            this.txt_telDomicilio.Name = "txt_telDomicilio";
-            this.txt_telDomicilio.Size = new System.Drawing.Size(119, 20);
-            this.txt_telDomicilio.TabIndex = 29;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(95, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Telefono 1:";
             // 
-            // txt_telTrabajo
+            // label10
             // 
-            this.txt_telTrabajo.Location = new System.Drawing.Point(597, 37);
-            this.txt_telTrabajo.Name = "txt_telTrabajo";
-            this.txt_telTrabajo.Size = new System.Drawing.Size(119, 20);
-            this.txt_telTrabajo.TabIndex = 31;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(442, 20);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Tel. Domicilio:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(256, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Telefono 2:";
             // 
             // txt_dpi
             // 
@@ -336,15 +337,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Verificar Datos";
             // 
-            // txt_idProspecto
-            // 
-            this.txt_idProspecto.Enabled = false;
-            this.txt_idProspecto.Location = new System.Drawing.Point(512, 31);
-            this.txt_idProspecto.Name = "txt_idProspecto";
-            this.txt_idProspecto.Size = new System.Drawing.Size(102, 20);
-            this.txt_idProspecto.TabIndex = 42;
-            this.txt_idProspecto.TextChanged += new System.EventHandler(this.txt_idProspecto_TextChanged);
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -354,8 +346,19 @@
             this.label13.TabIndex = 43;
             this.label13.Text = "Id:";
             // 
+            // txt_idProspecto
+            // 
+            this.txt_idProspecto.Enabled = false;
+            this.txt_idProspecto.Location = new System.Drawing.Point(512, 31);
+            this.txt_idProspecto.Name = "txt_idProspecto";
+            this.txt_idProspecto.Size = new System.Drawing.Size(102, 20);
+            this.txt_idProspecto.TabIndex = 42;
+            this.txt_idProspecto.TextChanged += new System.EventHandler(this.txt_idProspecto_TextChanged);
+            // 
             // dtgProspecto
             // 
+            this.dtgProspecto.AccessibleDescription = "  ";
+            this.dtgProspecto.AllowUserToAddRows = false;
             this.dtgProspecto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgProspecto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProspecto,
@@ -374,6 +377,7 @@
             this.dtgProspecto.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtgProspecto.Location = new System.Drawing.Point(44, 341);
             this.dtgProspecto.Name = "dtgProspecto";
+            this.dtgProspecto.ReadOnly = true;
             this.dtgProspecto.Size = new System.Drawing.Size(884, 71);
             this.dtgProspecto.TabIndex = 44;
             this.dtgProspecto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProspecto_CellContentClick);
@@ -549,5 +553,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn edad;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

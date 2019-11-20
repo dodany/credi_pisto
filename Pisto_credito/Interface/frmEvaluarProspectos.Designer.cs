@@ -70,6 +70,7 @@
             // 
             // dtg_Evaluacion
             // 
+            this.dtg_Evaluacion.AllowUserToAddRows = false;
             this.dtg_Evaluacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Evaluacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProspecto,
@@ -78,6 +79,7 @@
             this.estado});
             this.dtg_Evaluacion.Location = new System.Drawing.Point(63, 196);
             this.dtg_Evaluacion.Name = "dtg_Evaluacion";
+            this.dtg_Evaluacion.ReadOnly = true;
             this.dtg_Evaluacion.Size = new System.Drawing.Size(491, 60);
             this.dtg_Evaluacion.TabIndex = 38;
             this.dtg_Evaluacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_Evaluacion_CellContentClick);

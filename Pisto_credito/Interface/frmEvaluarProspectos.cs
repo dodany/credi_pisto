@@ -52,46 +52,51 @@ namespace Pisto_credito
         }
         private void seleccionarEvaluacion()
         {
-            DataTable dt = new DataTable();
-            dt = cl.Select("sp_prospecto", 1);
+            ArrayList parametros = new ArrayList();
+            ArrayList datos = new ArrayList();
 
-           
-                DataTableReader reader = dt.CreateDataReader();
+            parametros.Add(txt_dpi.Text);
+            datos.Add("@dpi");
+            Program.DPI = txt_dpi.Text;
+            DataTable dt = new DataTable();
+
+            dt = cl.SelectWithParameters("sp_prospecto", 8, parametros, datos);
+
+            DataTableReader reader = dt.CreateDataReader();
                 if (reader.HasRows)
                 {
                     reader.Read();
-
-                    String estado = reader["estado"].ToString();
+                     String estado = null;
+                            estado = reader["estado"].ToString();
 
                     if(estado == "La evaluacion 1 fue completada, continúa proceso.")
                     {
-                    
-                    try
+                   try
                     {
                         iniciarEvaluacion2();
                         frmEvaluacion2 frmEvalua2 = new frmEvaluacion2();
                         frmEvalua2.Show();
+                        this.Hide();
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Seleccione el prospecto a Evaluar", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Seleccione el prospecto a evaluar", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 
-
-                }
-                    else if (estado == null)
+                    }
+                    else if (estado == "")
                     {
                         try
                         {
                             iniciarEvaluacion1();
                             frmEvaluacion1 frmEvalua1 = new frmEvaluacion1();
                             frmEvalua1.Show();
+                        this.Hide();
                         }
                         catch (Exception)
                         {
-                            MessageBox.Show("Seleccione el prospecto a Evaluar", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("Seleccione el prospecto a evaluar", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
-
                     }
                     else if (estado == "Evaluación desaprobada.Solicitud de Credito Denegada.")
                     {

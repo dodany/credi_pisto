@@ -17,20 +17,21 @@ namespace Pisto_credito
     {
         clConexion cl = new clConexion();
         public int id;
-        
+
         public frmProspecto()
         {
             InitializeComponent();
         }
 
 
-        
+
         private void agregarProspecto()
         {
             ArrayList parametros = new ArrayList();
             ArrayList datos = new ArrayList();
 
-           // datos.Add("@idProspecto");
+            // datos.Add("@idProspecto");
+          
             datos.Add("@nombre");
             datos.Add("@dpi");
             datos.Add("@nit");
@@ -42,10 +43,11 @@ namespace Pisto_credito
             datos.Add("@telDomicilio");
             datos.Add("@telTrabajo");
             datos.Add("@idProducto");
-
-
+            datos.Add("@domicilio");
+            datos.Add("@trabajo");
 
             //parametros.Add(cl.Select("sp_prospecto",7));
+           
             parametros.Add(txt_nombre.Text);
             parametros.Add(txt_dpi.Text);
             parametros.Add(txt_nit.Text);
@@ -57,8 +59,12 @@ namespace Pisto_credito
             parametros.Add(txt_telDomicilio.Text);
             parametros.Add(txt_telTrabajo.Text);
             parametros.Add(cmb_producto.SelectedValue);
+            parametros.Add(txt_Domicilio.Text);
+            parametros.Add(txt_Trabajo.Text);
 
 
+            cl.Insert("sp_prospecto", 0, parametros, datos, false);
+            /*
             try
             {
                 cl.Insert("sp_prospecto", 0, parametros, datos, false);
@@ -67,6 +73,7 @@ namespace Pisto_credito
             {
                 MessageBox.Show("Rellene correctamente los campos.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+            */
         }
         
         private void label5_Click(object sender, EventArgs e)
@@ -153,6 +160,8 @@ namespace Pisto_credito
             datos.Add("@telDomicilio");
             datos.Add("@telTrabajo");
             datos.Add("@idProducto");
+            datos.Add("@domicilio");
+            datos.Add("@trabajo");
 
             parametros.Add(ObtenerId());
             parametros.Add(txt_nombre.Text);
@@ -166,6 +175,10 @@ namespace Pisto_credito
             parametros.Add(txt_telDomicilio.Text);
             parametros.Add(txt_telTrabajo.Text);
             parametros.Add(cmb_producto.SelectedValue);
+            parametros.Add(txt_Domicilio.Text);
+            parametros.Add(txt_Trabajo.Text);
+
+
             try
             {
                 cl.SelectWithParameters("sp_prospecto", 2, parametros, datos);
@@ -194,6 +207,8 @@ namespace Pisto_credito
             txt_telDomicilio.Text = Convert.ToString(row.Cells["telDomicilio"].Value);
             txt_telTrabajo.Text = Convert.ToString(row.Cells["telTrabajo"].Value);
             cmb_producto.Text = Convert.ToString(row.Cells["idProducto"].Value);
+            txt_Domicilio.Text = Convert.ToString(row.Cells["domicilio"].Value);
+            txt_Trabajo.Text = Convert.ToString(row.Cells["trabajo"].Value);
 
         }
 
@@ -277,6 +292,11 @@ namespace Pisto_credito
             // frmEvaluarProspectos.mdiObj2.txt_dpi.Text="XD";
             frmEvaluarProspectos frmEvaluarProspecto = new frmEvaluarProspectos();
             frmEvaluarProspecto.Show();
+
+        }
+
+        private void dtgProspecto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

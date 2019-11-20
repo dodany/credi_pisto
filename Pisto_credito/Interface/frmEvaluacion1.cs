@@ -25,6 +25,7 @@ namespace Pisto_credito.Interface
         {
             llenarDTG_Prospecto();
             llenarCombo();
+            btn_Continuar.Enabled = false;
             //dtgProspecto.DataSource = cl.SelectWithParameters("sp_evaluacion1",9,parametro,dato);
             //dtgProspecto.DataSource = llenarDTG_Prospecto();
         }
@@ -53,6 +54,7 @@ namespace Pisto_credito.Interface
                 {
 
                     aprobarEvaluacion();
+                    btn_Continuar.Enabled = true;
                     MessageBox.Show("La evaluación ha sido aprobada correctamente. ", "Evaluacion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -170,7 +172,13 @@ namespace Pisto_credito.Interface
             }
 
 
-            dtgProspecto.DataSource = cl.Select("sp_prospecto", 1);
+            ArrayList parametros = new ArrayList();
+            ArrayList datos = new ArrayList();
+
+            parametros.Add(txt_dpi.Text);
+            datos.Add("@dpi");
+            Program.DPI = txt_dpi.Text;
+            dtgProspecto.DataSource = cl.SelectWithParameters("sp_prospecto", 8, parametros, datos);
         }
         public void editarProspecto()
         {
@@ -226,9 +234,90 @@ namespace Pisto_credito.Interface
 
         private void btn_Continuar_Click(object sender, EventArgs e)
         {
-            frmEvaluacion2 frmEvaluar = new frmEvaluacion2();
-            frmEvaluar.Show();
-            this.Hide();
+            verificarAprobacion(); 
+            try
+            {
+                DialogResult result1 = MessageBox.Show("¿Desea continuar con el proceso de evaluación?",
+                     "Verificacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+
+                if (result1 == DialogResult.Yes)
+                {
+
+                    frmEvaluacion2 frmEvaluar = new frmEvaluacion2();
+                    frmEvaluar.Show();
+                    this.Hide();
+                    MessageBox.Show("La Evaluacion 1 ha sido terminada con exito.", "Evaluacion Terminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+
+                }
+
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                MessageBox.Show("¡Error! La operacion no se ha completado con exito!",
+                 "Operacion Fallida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
+        }
+        public void verificarAprobacion()
+        {
+            ArrayList parametros = new ArrayList();
+            ArrayList datos = new ArrayList();
+
+            parametros.Add(txt_idProspecto.Text);
+            datos.Add("@idProspecto");
+            Program.DPI = txt_idProspecto.Text;
+            DataTable dt = new DataTable();
+
+            dt = cl.SelectWithParameters("sp_evaluacion1", 10, parametros, datos);
+
+
+            if (dt.Rows.Count > 0)
+            {
+                DataTableReader reader = dt.CreateDataReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    
+                    bool verificacion = Convert.ToBoolean(reader["verificacion"]);
+                    if (verificacion == true)
+                    {
+                        btn_Continuar.Enabled = true;
+                        try
+                        {
+                            DialogResult result1 = MessageBox.Show("¿Desea continuar con el proceso de evaluación?",
+                                 "Verificacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+
+                            if (result1 == DialogResult.Yes)
+                            {
+
+                                frmEvaluacion2 frmEvaluar = new frmEvaluacion2();
+                                frmEvaluar.Show();
+                                this.Hide();
+                                MessageBox.Show("La Evaluacion 1 ha sido terminada con exito.", "Evaluacion Terminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+
+                            }
+
+                        }
+                        catch (System.Data.SqlClient.SqlException)
+                        {
+                            MessageBox.Show("¡Error! La operacion no se ha completado con exito!",
+                             "Operacion Fallida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("xd");
+                    }
+                }
+            }
         }
     }
 }
