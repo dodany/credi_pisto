@@ -35,6 +35,10 @@
             this.dtgProspecto = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_Domicilio = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_Trabajo = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.txt_edad = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -60,13 +64,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txt_Domicilio = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_Trabajo = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.idProspecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dpi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,8 +72,10 @@
             this.correo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tel1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tel2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,7 +97,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(1249, 586);
+            this.button5.Location = new System.Drawing.Point(1248, 600);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(90, 28);
             this.button5.TabIndex = 40;
@@ -130,8 +130,6 @@
             this.dtgProspecto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgProspecto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProspecto,
-            this.domicilio,
-            this.trabajo,
             this.nombre,
             this.dpi,
             this.nit,
@@ -139,14 +137,17 @@
             this.correo2,
             this.tel1,
             this.tel2,
-            this.telTrabajo,
+            this.domicilio,
             this.telDomicilio,
+            this.trabajo,
+            this.telTrabajo,
             this.idProducto,
             this.edad,
             this.estado});
             this.dtgProspecto.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtgProspecto.Location = new System.Drawing.Point(82, 360);
             this.dtgProspecto.Name = "dtgProspecto";
+            this.dtgProspecto.ReadOnly = true;
             this.dtgProspecto.Size = new System.Drawing.Size(1198, 169);
             this.dtgProspecto.TabIndex = 36;
             this.dtgProspecto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProspecto_CellContentClick);
@@ -190,6 +191,38 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Prospecto";
+            // 
+            // txt_Domicilio
+            // 
+            this.txt_Domicilio.Location = new System.Drawing.Point(533, 80);
+            this.txt_Domicilio.Name = "txt_Domicilio";
+            this.txt_Domicilio.Size = new System.Drawing.Size(216, 20);
+            this.txt_Domicilio.TabIndex = 37;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(477, 122);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 13);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "Trabajo:";
+            // 
+            // txt_Trabajo
+            // 
+            this.txt_Trabajo.Location = new System.Drawing.Point(533, 119);
+            this.txt_Trabajo.Name = "txt_Trabajo";
+            this.txt_Trabajo.Size = new System.Drawing.Size(216, 20);
+            this.txt_Trabajo.TabIndex = 35;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(477, 83);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(50, 13);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "Domiclio:";
             // 
             // txt_edad
             // 
@@ -409,38 +442,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txt_Domicilio
-            // 
-            this.txt_Domicilio.Location = new System.Drawing.Point(533, 80);
-            this.txt_Domicilio.Name = "txt_Domicilio";
-            this.txt_Domicilio.Size = new System.Drawing.Size(216, 20);
-            this.txt_Domicilio.TabIndex = 37;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(477, 122);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 13);
-            this.label13.TabIndex = 36;
-            this.label13.Text = "Trabajo:";
-            // 
-            // txt_Trabajo
-            // 
-            this.txt_Trabajo.Location = new System.Drawing.Point(533, 119);
-            this.txt_Trabajo.Name = "txt_Trabajo";
-            this.txt_Trabajo.Size = new System.Drawing.Size(216, 20);
-            this.txt_Trabajo.TabIndex = 35;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(477, 83);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 13);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "Domiclio:";
-            // 
             // idProspecto
             // 
             this.idProspecto.DataPropertyName = "idProspecto";
@@ -448,18 +449,6 @@
             this.idProspecto.Name = "idProspecto";
             this.idProspecto.ReadOnly = true;
             this.idProspecto.Width = 80;
-            // 
-            // domicilio
-            // 
-            this.domicilio.DataPropertyName = "domicilio";
-            this.domicilio.HeaderText = "Domicilio";
-            this.domicilio.Name = "domicilio";
-            // 
-            // trabajo
-            // 
-            this.trabajo.DataPropertyName = "trabajo";
-            this.trabajo.HeaderText = "Trabajo";
-            this.trabajo.Name = "trabajo";
             // 
             // nombre
             // 
@@ -506,11 +495,11 @@
             this.tel2.HeaderText = "Telefono 2";
             this.tel2.Name = "tel2";
             // 
-            // telTrabajo
+            // domicilio
             // 
-            this.telTrabajo.DataPropertyName = "telTrabajo";
-            this.telTrabajo.HeaderText = "Tel. Trabajo";
-            this.telTrabajo.Name = "telTrabajo";
+            this.domicilio.DataPropertyName = "domicilio";
+            this.domicilio.HeaderText = "Domicilio";
+            this.domicilio.Name = "domicilio";
             // 
             // telDomicilio
             // 
@@ -518,6 +507,18 @@
             this.telDomicilio.HeaderText = "Tel. Domicilio";
             this.telDomicilio.Name = "telDomicilio";
             this.telDomicilio.ReadOnly = true;
+            // 
+            // trabajo
+            // 
+            this.trabajo.DataPropertyName = "trabajo";
+            this.trabajo.HeaderText = "Trabajo";
+            this.trabajo.Name = "trabajo";
+            // 
+            // telTrabajo
+            // 
+            this.telTrabajo.DataPropertyName = "telTrabajo";
+            this.telTrabajo.HeaderText = "Tel. Trabajo";
+            this.telTrabajo.Name = "telTrabajo";
             // 
             // idProducto
             // 
@@ -605,8 +606,6 @@
         private System.Windows.Forms.TextBox txt_Trabajo;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProspecto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn trabajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn dpi;
         private System.Windows.Forms.DataGridViewTextBoxColumn nit;
@@ -614,8 +613,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn correo2;
         private System.Windows.Forms.DataGridViewTextBoxColumn tel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telTrabajo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn telDomicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn trabajo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telTrabajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn edad;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;

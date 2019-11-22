@@ -57,6 +57,9 @@ namespace Pisto_credito.Interface
                 {
                     aprobarEvaluacion();
                     agregarCliente();
+                    frmCliente frmClientes = new frmCliente();
+                    frmClientes.Show();
+
                     this.Hide();
                     //  btn_Continuar.Enabled = true;
                     // llenarDTG_Prospecto();
@@ -155,7 +158,7 @@ namespace Pisto_credito.Interface
         }
         private void guardarDatos()
         {
-            int anyNum = 0;
+          
 
             ArrayList parametros = new ArrayList();
             ArrayList datos = new ArrayList();
@@ -258,6 +261,9 @@ namespace Pisto_credito.Interface
             {
                 MessageBox.Show("Rellene correctamente los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -175,6 +175,7 @@ namespace Pisto_credito.src.BD
                     cmd.Parameters.AddWithValue(arlDatos[i].ToString(), arlParametros[i].ToString() );
                 }
 
+            
                 cmd.ExecuteNonQuery();
 
                 // INICIO CONSULTA DEL ID -- SI SE NECESITA

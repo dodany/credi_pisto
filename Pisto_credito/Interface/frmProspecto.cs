@@ -30,8 +30,9 @@ namespace Pisto_credito
             ArrayList parametros = new ArrayList();
             ArrayList datos = new ArrayList();
 
-            // datos.Add("@idProspecto");
-          
+            //datos.Add("@idProspecto");
+            datos.Add("@idProspecto");
+
             datos.Add("@nombre");
             datos.Add("@dpi");
             datos.Add("@nit");
@@ -47,7 +48,9 @@ namespace Pisto_credito
             datos.Add("@trabajo");
 
             //parametros.Add(cl.Select("sp_prospecto",7));
-           
+
+            parametros.Add(generarCodigoProspecto());
+
             parametros.Add(txt_nombre.Text);
             parametros.Add(txt_dpi.Text);
             parametros.Add(txt_nit.Text);
@@ -62,14 +65,25 @@ namespace Pisto_credito
             parametros.Add(txt_Domicilio.Text);
             parametros.Add(txt_Trabajo.Text);
 
+
+          
             try
             {
-                cl.Insert("sp_prospecto", 0, parametros, datos, false);
+                cl.Insert("sp_prospecto", 9, parametros, datos, false);
+
             }
             catch (Exception)
             {
-                MessageBox.Show("Rellene correctamente los campos.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                try
+                {
+                    { cl.Insert("sp_prospecto", 10, parametros, datos, false); }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Rellene correctamente los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            
         }
         
         private void label5_Click(object sender, EventArgs e)
@@ -297,19 +311,22 @@ namespace Pisto_credito
 
         }
 
-        public void generarCodigoProspecto()
+        public int generarCodigoProspecto()
         {
+            int numIncremet = 0;
             int año;
             int mes;
+            
             mes = DateTime.Today.Month;
             año = DateTime.Today.Year;
-
-            int codigo = Convert.ToInt32((Convert.ToString(año)+Convert.ToString(mes)+"0000"));
            
-            Console.WriteLine(codigo);
-
-
             
+            int codigo = Convert.ToInt32((Convert.ToString(año) + Convert.ToString(mes) + "0000"));
+
+            Console.WriteLine(codigo+numIncremet++);
+          
+            return codigo;
+
         }
     }
 }
