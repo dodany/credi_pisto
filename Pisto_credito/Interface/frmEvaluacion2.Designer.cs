@@ -47,13 +47,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.idProspecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dpi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_dpi = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProspecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProspecto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(367, 61);
+            this.label1.Location = new System.Drawing.Point(378, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 16);
             this.label1.TabIndex = 39;
@@ -70,7 +71,7 @@
             // 
             // btn_desaprobar
             // 
-            this.btn_desaprobar.Location = new System.Drawing.Point(443, 448);
+            this.btn_desaprobar.Location = new System.Drawing.Point(443, 431);
             this.btn_desaprobar.Name = "btn_desaprobar";
             this.btn_desaprobar.Size = new System.Drawing.Size(186, 55);
             this.btn_desaprobar.TabIndex = 45;
@@ -80,7 +81,7 @@
             // 
             // btn_Continuar
             // 
-            this.btn_Continuar.Location = new System.Drawing.Point(361, 525);
+            this.btn_Continuar.Location = new System.Drawing.Point(361, 508);
             this.btn_Continuar.Name = "btn_Continuar";
             this.btn_Continuar.Size = new System.Drawing.Size(148, 45);
             this.btn_Continuar.TabIndex = 44;
@@ -90,7 +91,7 @@
             // 
             // btn_Aprobar
             // 
-            this.btn_Aprobar.Location = new System.Drawing.Point(241, 448);
+            this.btn_Aprobar.Location = new System.Drawing.Point(241, 431);
             this.btn_Aprobar.Name = "btn_Aprobar";
             this.btn_Aprobar.Size = new System.Drawing.Size(186, 55);
             this.btn_Aprobar.TabIndex = 43;
@@ -101,7 +102,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(539, 27);
+            this.label13.Location = new System.Drawing.Point(591, 24);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(70, 13);
             this.label13.TabIndex = 47;
@@ -109,9 +110,9 @@
             // 
             // txt_idProspecto
             // 
-            this.txt_idProspecto.Enabled = false;
-            this.txt_idProspecto.Location = new System.Drawing.Point(616, 24);
+            this.txt_idProspecto.Location = new System.Drawing.Point(668, 21);
             this.txt_idProspecto.Name = "txt_idProspecto";
+            this.txt_idProspecto.ReadOnly = true;
             this.txt_idProspecto.Size = new System.Drawing.Size(102, 20);
             this.txt_idProspecto.TabIndex = 46;
             // 
@@ -140,13 +141,12 @@
             this.dtgProspecto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProspecto,
             this.nombre,
-            this.dpi,
             this.telTrabajo,
             this.telDomicilio,
             this.trabajo,
             this.domicilio});
             this.dtgProspecto.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dtgProspecto.Location = new System.Drawing.Point(59, 347);
+            this.dtgProspecto.Location = new System.Drawing.Point(59, 330);
             this.dtgProspecto.Name = "dtgProspecto";
             this.dtgProspecto.ReadOnly = true;
             this.dtgProspecto.Size = new System.Drawing.Size(760, 71);
@@ -233,7 +233,7 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txt_Trabajo);
             this.groupBox1.Controls.Add(this.btn_VerificarTrabajo);
-            this.groupBox1.Location = new System.Drawing.Point(59, 112);
+            this.groupBox1.Location = new System.Drawing.Point(59, 95);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(760, 219);
             this.groupBox1.TabIndex = 60;
@@ -250,51 +250,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // idProspecto
+            // txt_dpi
             // 
-            this.idProspecto.DataPropertyName = "idProspecto";
-            this.idProspecto.HeaderText = "idProspecto";
-            this.idProspecto.Name = "idProspecto";
-            this.idProspecto.ReadOnly = true;
-            this.idProspecto.Width = 80;
+            this.txt_dpi.Location = new System.Drawing.Point(668, 57);
+            this.txt_dpi.Name = "txt_dpi";
+            this.txt_dpi.ReadOnly = true;
+            this.txt_dpi.Size = new System.Drawing.Size(102, 20);
+            this.txt_dpi.TabIndex = 61;
             // 
-            // nombre
+            // label4
             // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombres:";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 120;
-            // 
-            // dpi
-            // 
-            this.dpi.DataPropertyName = "dpi";
-            this.dpi.HeaderText = "DPI:";
-            this.dpi.Name = "dpi";
-            this.dpi.ReadOnly = true;
-            this.dpi.Width = 80;
-            // 
-            // telTrabajo
-            // 
-            this.telTrabajo.DataPropertyName = "telTrabajo";
-            this.telTrabajo.HeaderText = "Tel. Trabajo";
-            this.telTrabajo.Name = "telTrabajo";
-            this.telTrabajo.ReadOnly = true;
-            // 
-            // telDomicilio
-            // 
-            this.telDomicilio.DataPropertyName = "telDomicilio";
-            this.telDomicilio.HeaderText = "Tel. Domicilio";
-            this.telDomicilio.Name = "telDomicilio";
-            this.telDomicilio.ReadOnly = true;
-            // 
-            // trabajo
-            // 
-            this.trabajo.DataPropertyName = "trabajo";
-            this.trabajo.HeaderText = "Trabajo";
-            this.trabajo.Name = "trabajo";
-            this.trabajo.ReadOnly = true;
-            this.trabajo.Width = 120;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(633, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 13);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "DPI:";
             // 
             // domicilio
             // 
@@ -304,11 +275,51 @@
             this.domicilio.ReadOnly = true;
             this.domicilio.Width = 120;
             // 
+            // trabajo
+            // 
+            this.trabajo.DataPropertyName = "trabajo";
+            this.trabajo.HeaderText = "Trabajo";
+            this.trabajo.Name = "trabajo";
+            this.trabajo.ReadOnly = true;
+            this.trabajo.Width = 120;
+            // 
+            // telDomicilio
+            // 
+            this.telDomicilio.DataPropertyName = "telDomicilio";
+            this.telDomicilio.HeaderText = "Tel. Domicilio";
+            this.telDomicilio.Name = "telDomicilio";
+            this.telDomicilio.ReadOnly = true;
+            // 
+            // telTrabajo
+            // 
+            this.telTrabajo.DataPropertyName = "telTrabajo";
+            this.telTrabajo.HeaderText = "Tel. Trabajo";
+            this.telTrabajo.Name = "telTrabajo";
+            this.telTrabajo.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombres:";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 120;
+            // 
+            // idProspecto
+            // 
+            this.idProspecto.DataPropertyName = "idProspecto";
+            this.idProspecto.HeaderText = "idProspecto";
+            this.idProspecto.Name = "idProspecto";
+            this.idProspecto.ReadOnly = true;
+            this.idProspecto.Width = 80;
+            // 
             // frmEvaluacion2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 599);
+            this.Controls.Add(this.txt_dpi);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dtgProspecto);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txt_idProspecto);
@@ -348,13 +359,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_dpi;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProspecto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dpi;
         private System.Windows.Forms.DataGridViewTextBoxColumn telTrabajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn telDomicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn trabajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
-        private System.Windows.Forms.Button button1;
     }
 }

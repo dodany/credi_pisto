@@ -16,11 +16,12 @@ namespace Pisto_credito.Interface
     {
         clConexion cl = new clConexion();
         public int id;
+        public String DPI;
         public frmEvaluacion1()
         {
             InitializeComponent();
         }
-
+        
         private void frmEvaluacion1_Load(object sender, EventArgs e)
         {
             llenarDTG_Prospecto();
@@ -36,7 +37,8 @@ namespace Pisto_credito.Interface
             ArrayList dato = new ArrayList();
 
             dato.Add("@dpi");
-            parametro.Add(Program.DPI);
+            
+            parametro.Add(DPI);
 
             dtgProspecto.DataSource = cl.SelectWithParameters("sp_Evaluacion1",9,parametro,dato);
             //frmEvaluarProspectos frmEvaluarProspecto = new frmEvaluarProspectos();
@@ -168,7 +170,9 @@ namespace Pisto_credito.Interface
             catch
             {
                 MessageBox.Show("Seleccione una fila para poder editarla",
-                " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("La operacion no se ha podido realizar debido a que los datos no son válidos. ¡Por favor llenarlos correctamente!",
+                  "Operacion Fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -177,7 +181,7 @@ namespace Pisto_credito.Interface
 
             parametros.Add(txt_dpi.Text);
             datos.Add("@dpi");
-            Program.DPI = txt_dpi.Text;
+           // Program.DPI = txt_dpi.Text;
             dtgProspecto.DataSource = cl.SelectWithParameters("sp_prospecto", 8, parametros, datos);
         }
         public void editarProspecto()
@@ -212,13 +216,15 @@ namespace Pisto_credito.Interface
             parametros.Add(cmb_producto.SelectedValue);
             try
             {
-                cl.SelectWithParameters("sp_prospecto", 2, parametros, datos);
+                cl.SelectWithParameters("sp_evaluacion1",11, parametros, datos);
                 // MessageBox.Show("El registro se ha editado correctamente ", "Editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
             {
-                MessageBox.Show("Seleccione una fila para poder editarla",
-                  " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
+
+                MessageBox.Show("La operacion no se ha podido realizar debido a que los datos no son válidos. ¡Por favor llenarlos correctamente!",
+                  "Operacion Fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
        
@@ -234,32 +240,8 @@ namespace Pisto_credito.Interface
 
         private void btn_Continuar_Click(object sender, EventArgs e)
         {
+            //Program.DPI = txt_dpi.Text;
             verificarAprobacion(); 
-            try
-            {
-                DialogResult result1 = MessageBox.Show("¿Desea continuar con el proceso de evaluación?",
-                     "Verificacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-
-                if (result1 == DialogResult.Yes)
-                {
-
-                    frmEvaluacion2 frmEvaluar = new frmEvaluacion2();
-                    frmEvaluar.Show();
-                    this.Hide();
-                    MessageBox.Show("La Evaluacion 1 ha sido terminada con exito.", "Evaluacion Terminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-
-                }
-
-            }
-            catch (System.Data.SqlClient.SqlException)
-            {
-                MessageBox.Show("¡Error! La operacion no se ha completado con exito!",
-                 "Operacion Fallida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
            
         }
         public void verificarAprobacion()
@@ -269,7 +251,7 @@ namespace Pisto_credito.Interface
 
             parametros.Add(txt_idProspecto.Text);
             datos.Add("@idProspecto");
-            Program.DPI = txt_idProspecto.Text;
+            //Program.DPI = txt_idProspecto.Text;
             DataTable dt = new DataTable();
 
             dt = cl.SelectWithParameters("sp_evaluacion1", 10, parametros, datos);
@@ -281,7 +263,7 @@ namespace Pisto_credito.Interface
                 if (reader.HasRows)
                 {
                     reader.Read();
-                    
+
                     bool verificacion = Convert.ToBoolean(reader["verificacion"]);
                     if (verificacion == true)
                     {
@@ -294,9 +276,7 @@ namespace Pisto_credito.Interface
 
                             if (result1 == DialogResult.Yes)
                             {
-
-                                frmEvaluacion2 frmEvaluar = new frmEvaluacion2();
-                                frmEvaluar.Show();
+                                iniciarEvaluacion2();
                                 this.Hide();
                                 MessageBox.Show("La Evaluacion 1 ha sido terminada con exito.", "Evaluacion Terminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
@@ -319,5 +299,20 @@ namespace Pisto_credito.Interface
                 }
             }
         }
+            public void iniciarEvaluacion2()
+            {
+                ArrayList parametro = new ArrayList();
+                ArrayList dato = new ArrayList();
+
+                dato.Add("@idProspecto");
+                parametro.Add(ObtenerId());
+
+                cl.Insert("sp_evaluacion2", 0, parametro, dato, false);
+                frmEvaluacion2 frmEvalua2 = new frmEvaluacion2();
+                frmEvalua2.DPI = txt_dpi.Text;
+                frmEvalua2.Show();
+
+            }
+           
     }
 }

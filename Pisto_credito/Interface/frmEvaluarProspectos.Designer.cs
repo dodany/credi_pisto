@@ -38,6 +38,7 @@
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEvaluar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.txt_idProspecto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Evaluacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,12 +90,14 @@
             this.idProspecto.DataPropertyName = "idProducto";
             this.idProspecto.HeaderText = "idProspecto";
             this.idProspecto.Name = "idProspecto";
+            this.idProspecto.ReadOnly = true;
             // 
             // nombre
             // 
             this.nombre.DataPropertyName = "nombre";
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
             this.nombre.Width = 150;
             // 
             // dpi
@@ -102,12 +105,14 @@
             this.dpi.DataPropertyName = "dpi";
             this.dpi.HeaderText = "DPI";
             this.dpi.Name = "dpi";
+            this.dpi.ReadOnly = true;
             // 
             // estado
             // 
             this.estado.DataPropertyName = "estado";
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             // 
             // btnEvaluar
             // 
@@ -129,11 +134,22 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // txt_idProspecto
+            // 
+            this.txt_idProspecto.Enabled = false;
+            this.txt_idProspecto.Location = new System.Drawing.Point(482, 23);
+            this.txt_idProspecto.Name = "txt_idProspecto";
+            this.txt_idProspecto.Size = new System.Drawing.Size(102, 20);
+            this.txt_idProspecto.TabIndex = 47;
+            this.txt_idProspecto.Visible = false;
+            this.txt_idProspecto.TextChanged += new System.EventHandler(this.txt_idProspecto_TextChanged);
+            // 
             // frmEvaluarProspectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 424);
+            this.Controls.Add(this.txt_idProspecto);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEvaluar);
             this.Controls.Add(this.dtg_Evaluacion);
@@ -160,5 +176,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         public System.Windows.Forms.DataGridView dtg_Evaluacion;
         public System.Windows.Forms.TextBox txt_dpi;
+        private System.Windows.Forms.TextBox txt_idProspecto;
     }
 }

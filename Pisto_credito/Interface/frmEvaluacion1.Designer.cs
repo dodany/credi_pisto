@@ -396,12 +396,14 @@
             this.nombre.DataPropertyName = "nombre";
             this.nombre.HeaderText = "Nombres:";
             this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
             // 
             // dpi
             // 
             this.dpi.DataPropertyName = "dpi";
             this.dpi.HeaderText = "DPI:";
             this.dpi.Name = "dpi";
+            this.dpi.ReadOnly = true;
             this.dpi.Width = 80;
             // 
             // nit
@@ -409,6 +411,7 @@
             this.nit.DataPropertyName = "nit";
             this.nit.HeaderText = "Nit:";
             this.nit.Name = "nit";
+            this.nit.ReadOnly = true;
             this.nit.Width = 80;
             // 
             // correo1
@@ -416,12 +419,14 @@
             this.correo1.DataPropertyName = "correo1";
             this.correo1.HeaderText = "Correo 1";
             this.correo1.Name = "correo1";
+            this.correo1.ReadOnly = true;
             // 
             // correo2
             // 
             this.correo2.DataPropertyName = "correo2";
             this.correo2.HeaderText = "Correo 2";
             this.correo2.Name = "correo2";
+            this.correo2.ReadOnly = true;
             // 
             // tel1
             // 
@@ -435,12 +440,14 @@
             this.tel2.DataPropertyName = "tel2";
             this.tel2.HeaderText = "Telefono 2";
             this.tel2.Name = "tel2";
+            this.tel2.ReadOnly = true;
             // 
             // telTrabajo
             // 
             this.telTrabajo.DataPropertyName = "telTrabajo";
             this.telTrabajo.HeaderText = "Tel. Trabajo";
             this.telTrabajo.Name = "telTrabajo";
+            this.telTrabajo.ReadOnly = true;
             // 
             // telDomicilio
             // 
@@ -454,6 +461,7 @@
             this.idProducto.DataPropertyName = "idProducto";
             this.idProducto.HeaderText = "idProducto";
             this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
             this.idProducto.Width = 80;
             // 
             // edad
@@ -461,6 +469,7 @@
             this.edad.DataPropertyName = "edad";
             this.edad.HeaderText = "Edad";
             this.edad.Name = "edad";
+            this.edad.ReadOnly = true;
             this.edad.Width = 60;
             // 
             // estado
@@ -468,6 +477,7 @@
             this.estado.DataPropertyName = "estado";
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             // 
             // frmEvaluacion1
             // 

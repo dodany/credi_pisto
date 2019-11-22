@@ -11,7 +11,9 @@ using System.Windows.Forms;
 namespace Pisto_credito.Interface
 {
     public partial class frmMainMenu : Form
+
     {
+        //public String DPI;
         public static frmMainMenu mdiObj;
         public frmMainMenu()
         {

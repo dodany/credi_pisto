@@ -9,7 +9,7 @@ namespace Pisto_credito
 {
     static class Program
     {
-        public static String DPI;
+       
 
         /// <summary>
         /// The main entry point for the application.
@@ -19,7 +19,7 @@ namespace Pisto_credito
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEvaluarProspectos());
+            Application.Run(new frmProspecto());
         }
     }
 }

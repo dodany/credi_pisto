@@ -62,9 +62,6 @@ namespace Pisto_credito
             parametros.Add(txt_Domicilio.Text);
             parametros.Add(txt_Trabajo.Text);
 
-
-            cl.Insert("sp_prospecto", 0, parametros, datos, false);
-            /*
             try
             {
                 cl.Insert("sp_prospecto", 0, parametros, datos, false);
@@ -73,7 +70,6 @@ namespace Pisto_credito
             {
                 MessageBox.Show("Rellene correctamente los campos.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-            */
         }
         
         private void label5_Click(object sender, EventArgs e)
@@ -89,6 +85,7 @@ namespace Pisto_credito
 
         private void frmProspecto_Load(object sender, EventArgs e)
         {
+            generarCodigoProspecto();
             llenarCombo();
             dtgProspecto.DataSource = cl.Select("sp_prospecto", 1);
             cmb_producto.Text = "Elegir una opcion";
@@ -298,6 +295,21 @@ namespace Pisto_credito
         private void dtgProspecto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        public void generarCodigoProspecto()
+        {
+            int año;
+            int mes;
+            mes = DateTime.Today.Month;
+            año = DateTime.Today.Year;
+
+            int codigo = Convert.ToInt32((Convert.ToString(año)+Convert.ToString(mes)+"0000"));
+           
+            Console.WriteLine(codigo);
+
+
+            
         }
     }
 }

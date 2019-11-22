@@ -103,6 +103,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\BD\clConexion.cs" />
+    <Compile Include="src\Singleton\Singleton.cs" />
     <EmbeddedResource Include="Interface\frmEvaluacion1.resx">
       <DependentUpon>frmEvaluacion1.cs</DependentUpon>
     </EmbeddedResource>

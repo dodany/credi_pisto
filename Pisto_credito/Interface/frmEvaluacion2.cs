@@ -16,6 +16,9 @@ namespace Pisto_credito.Interface
     {
 
         clConexion cl = new clConexion();
+        private int id;
+        public String DPI;
+
         public frmEvaluacion2()
         {
             InitializeComponent();
@@ -38,16 +41,15 @@ namespace Pisto_credito.Interface
 
                 if (result1 == DialogResult.Yes)
                 {
-
                     aprobarEvaluacion();
                     btn_Continuar.Enabled = true;
+                    llenarDTG_Prospecto();
                     MessageBox.Show("La evaluación ha sido aprobada correctamente. ", "Evaluacion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
 
                 }
-
             }
             catch (System.Data.SqlClient.SqlException)
             {
@@ -66,8 +68,8 @@ namespace Pisto_credito.Interface
 
                 if (result1 == DialogResult.Yes)
                 {
-
                     desaprobarEvaluacion();
+                    llenarDTG_Prospecto();
                     MessageBox.Show("La evaluación ha sido cancelada, la solicitud ha sido rechazada. ", "Evaluacion Terminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -89,7 +91,6 @@ namespace Pisto_credito.Interface
         }
 
 
-
         public void verificarAprobacion()
         {
             ArrayList parametros = new ArrayList();
@@ -97,7 +98,7 @@ namespace Pisto_credito.Interface
 
             parametros.Add(txt_idProspecto.Text);
             datos.Add("@idProspecto");
-            Program.DPI = txt_idProspecto.Text;
+            //Program.DPI = txt_idProspecto.Text;
             DataTable dt = new DataTable();
 
             dt = cl.SelectWithParameters("sp_evaluacion2",9, parametros, datos);
@@ -124,8 +125,7 @@ namespace Pisto_credito.Interface
 
                             if (result1 == DialogResult.Yes)
                             {
-                                frmEvaluacion3 frmEvaluar = new frmEvaluacion3();
-                                frmEvaluar.Show();
+                                iniciarEvaluacion3();
                                 this.Close();
                                 MessageBox.Show("La Evaluacion 2 ha sido terminada con exito.", "Evaluacion Terminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
@@ -173,7 +173,7 @@ namespace Pisto_credito.Interface
             ArrayList dato = new ArrayList();
 
             dato.Add("@dpi");
-            parametro.Add(Program.DPI);
+            parametro.Add(DPI);
 
             dtgProspecto.DataSource = cl.SelectWithParameters("sp_evaluacion2",4, parametro, dato);
         }
@@ -186,6 +186,7 @@ namespace Pisto_credito.Interface
         {
             DataGridViewRow row = dtgProspecto.CurrentRow;
 
+            txt_dpi.Text = Convert.ToString(row.Cells["dpi"].Value);
             txt_idProspecto.Text = Convert.ToString(row.Cells["idProspecto"].Value);
             txt_Domicilio.Text = Convert.ToString(row.Cells["domicilio"].Value);
             txt_Trabajo.Text = Convert.ToString(row.Cells["trabajo"].Value);
@@ -249,8 +250,7 @@ namespace Pisto_credito.Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            editarDatosProspecto();
-            /*try
+            try
             {
                 editarDatosProspecto();
             }
@@ -259,7 +259,7 @@ namespace Pisto_credito.Interface
                 MessageBox.Show("Seleccione una fila para poder editarla",
                 " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            */
+            
             llenarDTG_Prospecto();
         }
         public void editarDatosProspecto()
@@ -273,14 +273,13 @@ namespace Pisto_credito.Interface
             datos.Add("@Trabajo");
             datos.Add("@Domicilio");
 
-            parametros.Add(txt_idProspecto);
+            parametros.Add(ObtenerId());
             parametros.Add(txt_telDomicilio.Text);
             parametros.Add(txt_telTrabajo.Text);
             parametros.Add(txt_Trabajo.Text);
             parametros.Add(txt_Domicilio.Text);
            
-            cl.SelectWithParameters("sp_evaluacion2", 14, parametros, datos);
-            /*
+            
             try
             {
             cl.SelectWithParameters("sp_evaluacion2",14,parametros, datos);
@@ -292,7 +291,31 @@ namespace Pisto_credito.Interface
                 MessageBox.Show("Seleccione una fila para poder editarla",
                   " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            */
+           
+        }
+        public int ObtenerId()
+        {
+            DataGridViewRow row = dtgProspecto.CurrentRow;
+            if (row != null)
+            {
+                id = Convert.ToInt32(row.Cells["idProspecto"].Value);
+            }
+            return id;
+        }
+
+        public void iniciarEvaluacion3()
+        {
+            ArrayList parametro = new ArrayList();
+            ArrayList dato = new ArrayList();
+
+            dato.Add("@idProspecto");
+            parametro.Add(ObtenerId());
+
+            cl.Insert("sp_evaluacion3", 0, parametro, dato, false);
+            frmEvaluacion3 frmEvalua3 = new frmEvaluacion3();
+            frmEvalua3.DPI = txt_dpi.Text;
+            frmEvalua3.idProspect = Convert.ToInt32(txt_idProspecto.Text);
+            frmEvalua3.Show();
         }
     }
 
