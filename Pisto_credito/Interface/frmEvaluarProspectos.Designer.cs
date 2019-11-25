@@ -38,6 +38,7 @@
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEvaluar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.txt_idProspecto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Evaluacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             this.txt_dpi.Name = "txt_dpi";
             this.txt_dpi.Size = new System.Drawing.Size(174, 20);
             this.txt_dpi.TabIndex = 0;
+            this.txt_dpi.TextChanged += new System.EventHandler(this.txt_dpi_TextChanged);
             // 
             // label1
             // 
@@ -69,28 +71,33 @@
             // 
             // dtg_Evaluacion
             // 
+            this.dtg_Evaluacion.AllowUserToAddRows = false;
             this.dtg_Evaluacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Evaluacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProspecto,
             this.nombre,
             this.dpi,
             this.estado});
-            this.dtg_Evaluacion.Location = new System.Drawing.Point(24, 198);
+            this.dtg_Evaluacion.Location = new System.Drawing.Point(63, 216);
             this.dtg_Evaluacion.Name = "dtg_Evaluacion";
-            this.dtg_Evaluacion.Size = new System.Drawing.Size(573, 60);
+            this.dtg_Evaluacion.ReadOnly = true;
+            this.dtg_Evaluacion.Size = new System.Drawing.Size(491, 60);
             this.dtg_Evaluacion.TabIndex = 38;
+            this.dtg_Evaluacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_Evaluacion_CellContentClick);
             // 
             // idProspecto
             // 
             this.idProspecto.DataPropertyName = "idProducto";
             this.idProspecto.HeaderText = "idProspecto";
             this.idProspecto.Name = "idProspecto";
+            this.idProspecto.ReadOnly = true;
             // 
             // nombre
             // 
             this.nombre.DataPropertyName = "nombre";
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
             this.nombre.Width = 150;
             // 
             // dpi
@@ -98,21 +105,24 @@
             this.dpi.DataPropertyName = "dpi";
             this.dpi.HeaderText = "DPI";
             this.dpi.Name = "dpi";
+            this.dpi.ReadOnly = true;
             // 
             // estado
             // 
             this.estado.DataPropertyName = "estado";
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             // 
             // btnEvaluar
             // 
-            this.btnEvaluar.Location = new System.Drawing.Point(229, 327);
+            this.btnEvaluar.Location = new System.Drawing.Point(229, 317);
             this.btnEvaluar.Name = "btnEvaluar";
             this.btnEvaluar.Size = new System.Drawing.Size(165, 42);
             this.btnEvaluar.TabIndex = 39;
             this.btnEvaluar.Text = "Evaluar Prospecto";
             this.btnEvaluar.UseVisualStyleBackColor = true;
+            this.btnEvaluar.Click += new System.EventHandler(this.btnEvaluar_Click);
             // 
             // btnBuscar
             // 
@@ -124,11 +134,22 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // txt_idProspecto
+            // 
+            this.txt_idProspecto.Enabled = false;
+            this.txt_idProspecto.Location = new System.Drawing.Point(482, 23);
+            this.txt_idProspecto.Name = "txt_idProspecto";
+            this.txt_idProspecto.Size = new System.Drawing.Size(102, 20);
+            this.txt_idProspecto.TabIndex = 47;
+            this.txt_idProspecto.Visible = false;
+            this.txt_idProspecto.TextChanged += new System.EventHandler(this.txt_idProspecto_TextChanged);
+            // 
             // frmEvaluarProspectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 424);
+            this.ClientSize = new System.Drawing.Size(619, 398);
+            this.Controls.Add(this.txt_idProspecto);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEvaluar);
             this.Controls.Add(this.dtg_Evaluacion);
@@ -145,16 +166,16 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txt_dpi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dtg_Evaluacion;
         private System.Windows.Forms.Button btnEvaluar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProspecto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn dpi;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        public System.Windows.Forms.DataGridView dtg_Evaluacion;
+        public System.Windows.Forms.TextBox txt_dpi;
+        private System.Windows.Forms.TextBox txt_idProspecto;
     }
 }

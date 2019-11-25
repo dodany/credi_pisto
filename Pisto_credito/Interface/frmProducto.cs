@@ -153,7 +153,16 @@ namespace Pisto_credito
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            agregarProducto();
+            try
+            {
+                agregarProducto();
+                dtg_Producto.DataSource = cl.Select("sp_producto", 1);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se ha podido realizar la operacion. Por favor rellene todos los campos correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             dtg_Producto.DataSource = cl.Select("sp_producto",1);
         }
 

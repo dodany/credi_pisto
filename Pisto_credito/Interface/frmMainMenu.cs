@@ -11,7 +11,9 @@ using System.Windows.Forms;
 namespace Pisto_credito.Interface
 {
     public partial class frmMainMenu : Form
+
     {
+        //public String DPI;
         public static frmMainMenu mdiObj;
         public frmMainMenu()
         {
@@ -96,6 +98,24 @@ namespace Pisto_credito.Interface
             frmEvaluar.Show();
 
         }
+
+        private void verClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCliente frmClientes = new frmCliente();
+            frmClientes.MdiParent = this;
+            frmClientes.Show();
+
+        }
+
+        private void evaluacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEvaluaciones frmEvaluacion = new frmEvaluaciones();
+            frmEvaluacion.MdiParent = this;
+            frmEvaluacion.Show();
+
+        }
+
+       
     }
     
 }

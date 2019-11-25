@@ -91,6 +91,7 @@
             this.evaluacionesToolStripMenuItem.Name = "evaluacionesToolStripMenuItem";
             this.evaluacionesToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.evaluacionesToolStripMenuItem.Text = "Evaluaciones";
+            this.evaluacionesToolStripMenuItem.Click += new System.EventHandler(this.evaluacionesToolStripMenuItem_Click);
             // 
             // clientes
             // 
@@ -104,13 +105,14 @@
             // verClientesToolStripMenuItem
             // 
             this.verClientesToolStripMenuItem.Name = "verClientesToolStripMenuItem";
-            this.verClientesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.verClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verClientesToolStripMenuItem.Text = "Ver Clientes";
+            this.verClientesToolStripMenuItem.Click += new System.EventHandler(this.verClientesToolStripMenuItem_Click);
             // 
             // estadoClientesToolStripMenuItem
             // 
             this.estadoClientesToolStripMenuItem.Name = "estadoClientesToolStripMenuItem";
-            this.estadoClientesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.estadoClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.estadoClientesToolStripMenuItem.Text = "Estado Clientes";
             // 
             // productos
@@ -124,7 +126,7 @@
             // verProductosToolStripMenuItem
             // 
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
-            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.verProductosToolStripMenuItem.Text = "Ver Productos";
             this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
             // 
@@ -142,6 +144,7 @@
             this.gestionarPermisosToolStripMenuItem.Name = "gestionarPermisosToolStripMenuItem";
             this.gestionarPermisosToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.gestionarPermisosToolStripMenuItem.Text = "Gestionar Permisos";
+            this.gestionarPermisosToolStripMenuItem.Click += new System.EventHandler(this.gestionarPermisosToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pisto_credito.Interface;
 
 namespace Pisto_credito
 {
@@ -16,20 +17,22 @@ namespace Pisto_credito
     {
         clConexion cl = new clConexion();
         public int id;
-        
+
         public frmProspecto()
         {
             InitializeComponent();
         }
 
 
-        
+
         private void agregarProspecto()
         {
             ArrayList parametros = new ArrayList();
             ArrayList datos = new ArrayList();
 
-           // datos.Add("@idProspecto");
+            //datos.Add("@idProspecto");
+            datos.Add("@idProspecto");
+
             datos.Add("@nombre");
             datos.Add("@dpi");
             datos.Add("@nit");
@@ -41,10 +44,13 @@ namespace Pisto_credito
             datos.Add("@telDomicilio");
             datos.Add("@telTrabajo");
             datos.Add("@idProducto");
-
-
+            datos.Add("@domicilio");
+            datos.Add("@trabajo");
 
             //parametros.Add(cl.Select("sp_prospecto",7));
+
+            parametros.Add(generarCodigoProspecto());
+
             parametros.Add(txt_nombre.Text);
             parametros.Add(txt_dpi.Text);
             parametros.Add(txt_nit.Text);
@@ -56,16 +62,28 @@ namespace Pisto_credito
             parametros.Add(txt_telDomicilio.Text);
             parametros.Add(txt_telTrabajo.Text);
             parametros.Add(cmb_producto.SelectedValue);
+            parametros.Add(txt_Domicilio.Text);
+            parametros.Add(txt_Trabajo.Text);
 
 
+          
             try
             {
-                cl.Insert("sp_prospecto", 0, parametros, datos, false);
+                cl.Insert("sp_prospecto", 9, parametros, datos, false);
+
             }
             catch (Exception)
             {
-                MessageBox.Show("Rellene correctamente los campos.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                try
+                {
+                    { cl.Insert("sp_prospecto", 10, parametros, datos, false); }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Rellene correctamente los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            
         }
         
         private void label5_Click(object sender, EventArgs e)
@@ -81,6 +99,7 @@ namespace Pisto_credito
 
         private void frmProspecto_Load(object sender, EventArgs e)
         {
+            generarCodigoProspecto();
             llenarCombo();
             dtgProspecto.DataSource = cl.Select("sp_prospecto", 1);
             cmb_producto.Text = "Elegir una opcion";
@@ -105,15 +124,19 @@ namespace Pisto_credito
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            agregarProspecto();
-            dtgProspecto.DataSource = cl.Select("sp_prospecto", 1);
+
+            try
+            {
+                agregarProspecto();
+                dtgProspecto.DataSource = cl.Select("sp_prospecto", 1);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se ha podido realizar la operacion. Por favor rellene todos los campos correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+                dtgProspecto.DataSource = cl.Select("sp_prospecto", 1);
         }
-
-
-      
-
-
-     
 
 
         public void eliminarProspecto()
@@ -143,12 +166,8 @@ namespace Pisto_credito
         }
         public void editarProspecto()
         {
-
-
             ArrayList parametros = new ArrayList();
             ArrayList datos = new ArrayList();
-
-          
 
             datos.Add("@idProspecto");
             datos.Add("@nombre");
@@ -162,6 +181,8 @@ namespace Pisto_credito
             datos.Add("@telDomicilio");
             datos.Add("@telTrabajo");
             datos.Add("@idProducto");
+            datos.Add("@domicilio");
+            datos.Add("@trabajo");
 
             parametros.Add(ObtenerId());
             parametros.Add(txt_nombre.Text);
@@ -175,6 +196,10 @@ namespace Pisto_credito
             parametros.Add(txt_telDomicilio.Text);
             parametros.Add(txt_telTrabajo.Text);
             parametros.Add(cmb_producto.SelectedValue);
+            parametros.Add(txt_Domicilio.Text);
+            parametros.Add(txt_Trabajo.Text);
+
+
             try
             {
                 cl.SelectWithParameters("sp_prospecto", 2, parametros, datos);
@@ -190,8 +215,6 @@ namespace Pisto_credito
 
         private void mostrarDatosParaEditar()
         {
-
-
             DataGridViewRow row = dtgProspecto.CurrentRow;
 
             txt_nombre.Text = Convert.ToString(row.Cells["nombre"].Value);
@@ -205,7 +228,8 @@ namespace Pisto_credito
             txt_telDomicilio.Text = Convert.ToString(row.Cells["telDomicilio"].Value);
             txt_telTrabajo.Text = Convert.ToString(row.Cells["telTrabajo"].Value);
             cmb_producto.Text = Convert.ToString(row.Cells["idProducto"].Value);
-
+            txt_Domicilio.Text = Convert.ToString(row.Cells["domicilio"].Value);
+            txt_Trabajo.Text = Convert.ToString(row.Cells["trabajo"].Value);
 
         }
 
@@ -266,6 +290,52 @@ namespace Pisto_credito
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            evaluacion();
+        
+        }
+
+        private void evaluacion()
+        {
+            ArrayList parametro = new ArrayList();
+            ArrayList dato = new ArrayList();
+
+            dato.Add("@idProspecto");
+            parametro.Add(ObtenerId());
+
+
+            //frmEvaluarProspectos.mdiObj.dtg_Evaluacion.DataSource = cl.Insert("sp_evaluacion1", 4, parametro, dato, false);
+            // frmEvaluarProspectos.mdiObj2.txt_dpi.Text="XD";
+            frmEvaluarProspectos frmEvaluarProspecto = new frmEvaluarProspectos();
+            frmEvaluarProspecto.Show();
+
+        }
+
+        private void dtgProspecto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        public int generarCodigoProspecto()
+        {
+            int numIncremet = 0;
+            int año;
+            int mes;
+            
+            mes = DateTime.Today.Month;
+            año = DateTime.Today.Year;
+           
+            
+            int codigo = Convert.ToInt32((Convert.ToString(año) + Convert.ToString(mes) + "0000"));
+
+            Console.WriteLine(codigo+numIncremet++);
+          
+            return codigo;
 
         }
     }

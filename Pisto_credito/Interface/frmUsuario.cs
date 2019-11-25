@@ -28,8 +28,6 @@ namespace Pisto_credito.Interface
         private void consultaUsuarios()
         {
             DataTable dt = new DataTable();
-
-
             dt = cl.Select("sp_usuario", 2);
 
             if (dt.Rows.Count > 0)
@@ -41,10 +39,7 @@ namespace Pisto_credito.Interface
 
                     String pass = reader["pass"].ToString();
 
-
                     Console.WriteLine("Usuario ->" + pass);
-
-
                 }
             }
         }
@@ -67,8 +62,6 @@ namespace Pisto_credito.Interface
             parametros.Add(txt_correo.Text);
             parametros.Add(txt_contraseña.Text);
             parametros.Add(cmb_idRol.SelectedValue);
-
-
 
             cl.Insert("sp_usuario", 0, parametros, datos, false);
 
@@ -95,8 +88,6 @@ namespace Pisto_credito.Interface
 
         public void editarUsuario()
         {
-          
-
             ArrayList parametros = new ArrayList();
             ArrayList datos = new ArrayList();
 
@@ -129,8 +120,6 @@ namespace Pisto_credito.Interface
 
         private void mostrarDatosParaEditar()
         {
-          
-
             DataGridViewRow row = dtgUsuario.CurrentRow;
 
             txt_nombre.Text = Convert.ToString(row.Cells["nombre"].Value);
@@ -139,13 +128,10 @@ namespace Pisto_credito.Interface
             txt_contraseña.Text = Convert.ToString(row.Cells["pass"].Value);
             cmb_idRol.Text = Convert.ToString(row.Cells["idRol"].Value);
 
-          
         }
 
         private void frmUsuario_Load(object sender, EventArgs e)
         {
-           
-            
             llenarCombo();
             dtgUsuario.DataSource = cl.Select("sp_usuario", 2);
             cmb_idRol.Text = "Elegir una opcion";
@@ -158,7 +144,15 @@ namespace Pisto_credito.Interface
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            agregarUsuario();
+
+            try {
+                agregarUsuario();
+                dtgUsuario.DataSource = cl.Select("sp_usuario", 2);
+            }
+            catch(Exception) {
+                MessageBox.Show("No se ha podido realizar la operacion. Por favor rellene todos los campos correctamente", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+           
             dtgUsuario.DataSource = cl.Select("sp_usuario", 2);
         }
 
@@ -166,16 +160,13 @@ namespace Pisto_credito.Interface
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
             try
             {
                 DialogResult result1 = MessageBox.Show("¿Esta seguro de que desea eliminar este registro?",
                      "Verificacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-
                 if (result1 == DialogResult.Yes)
                 {
-
                     eliminarUsuario();
                     dtgUsuario.DataSource = cl.Select("sp_usuario", 2);
                     MessageBox.Show("El registro se ha eliminado correctamente ", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -190,8 +181,6 @@ namespace Pisto_credito.Interface
                 MessageBox.Show("¡Error! La operacion no se ha completado con exito!",
                  "Operacion Fallida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-           
         }
 
         private void llenarCombo()
@@ -221,7 +210,6 @@ namespace Pisto_credito.Interface
 
             if (result1 == DialogResult.Yes)
             {
-
                 ArrayList parametros = new ArrayList();
                 ArrayList datos = new ArrayList();
 
@@ -293,10 +281,9 @@ namespace Pisto_credito.Interface
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
-        }
+            {
+                this.Close();
+            }
         private void button1_Click(object sender, EventArgs e)
             {
 
