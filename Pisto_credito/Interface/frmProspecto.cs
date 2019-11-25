@@ -124,8 +124,18 @@ namespace Pisto_credito
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            agregarProspecto();
-            dtgProspecto.DataSource = cl.Select("sp_prospecto", 1);
+
+            try
+            {
+                agregarProspecto();
+                dtgProspecto.DataSource = cl.Select("sp_prospecto", 1);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se ha podido realizar la operacion. Por favor rellene todos los campos correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+                dtgProspecto.DataSource = cl.Select("sp_prospecto", 1);
         }
 
 

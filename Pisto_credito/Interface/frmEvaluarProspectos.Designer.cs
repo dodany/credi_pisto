@@ -78,7 +78,7 @@
             this.nombre,
             this.dpi,
             this.estado});
-            this.dtg_Evaluacion.Location = new System.Drawing.Point(63, 196);
+            this.dtg_Evaluacion.Location = new System.Drawing.Point(63, 216);
             this.dtg_Evaluacion.Name = "dtg_Evaluacion";
             this.dtg_Evaluacion.ReadOnly = true;
             this.dtg_Evaluacion.Size = new System.Drawing.Size(491, 60);
@@ -116,7 +116,7 @@
             // 
             // btnEvaluar
             // 
-            this.btnEvaluar.Location = new System.Drawing.Point(229, 330);
+            this.btnEvaluar.Location = new System.Drawing.Point(229, 317);
             this.btnEvaluar.Name = "btnEvaluar";
             this.btnEvaluar.Size = new System.Drawing.Size(165, 42);
             this.btnEvaluar.TabIndex = 39;
@@ -148,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 424);
+            this.ClientSize = new System.Drawing.Size(619, 398);
             this.Controls.Add(this.txt_idProspecto);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEvaluar);

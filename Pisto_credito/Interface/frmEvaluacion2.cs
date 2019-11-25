@@ -250,16 +250,14 @@ namespace Pisto_credito.Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+           
             try
             {
                 editarDatosProspecto();
             }
-            catch
-            {
-                MessageBox.Show("Seleccione una fila para poder editarla",
-                " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            
+            catch (Exception) { MessageBox.Show("Los datos ingresados no son válidos, por favor ingresarlos correctamente.", "Datos no válidos", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
             llenarDTG_Prospecto();
         }
         public void editarDatosProspecto()

@@ -30,7 +30,7 @@
         {
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.dtgProspecto = new System.Windows.Forms.DataGridView();
+            this.dtgCliente = new System.Windows.Forms.DataGridView();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dpi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +47,9 @@
             this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgProspecto)).BeginInit();
+            this.btn_Pagos = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReporte
@@ -62,17 +64,17 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(553, 557);
+            this.btnEliminar.Location = new System.Drawing.Point(657, 557);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(143, 43);
+            this.btnEliminar.Size = new System.Drawing.Size(175, 43);
             this.btnEliminar.TabIndex = 46;
-            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Text = "Eliminar Cliente";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // dtgProspecto
+            // dtgCliente
             // 
-            this.dtgProspecto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgProspecto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCliente,
             this.nombre,
             this.dpi,
@@ -88,13 +90,13 @@
             this.idProducto,
             this.edad,
             this.estado});
-            this.dtgProspecto.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dtgProspecto.Location = new System.Drawing.Point(70, 143);
-            this.dtgProspecto.Name = "dtgProspecto";
-            this.dtgProspecto.ReadOnly = true;
-            this.dtgProspecto.Size = new System.Drawing.Size(1198, 358);
-            this.dtgProspecto.TabIndex = 45;
-            this.dtgProspecto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProspecto_CellContentClick);
+            this.dtgCliente.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgCliente.Location = new System.Drawing.Point(70, 143);
+            this.dtgCliente.Name = "dtgCliente";
+            this.dtgCliente.ReadOnly = true;
+            this.dtgCliente.Size = new System.Drawing.Size(1198, 358);
+            this.dtgCliente.TabIndex = 45;
+            this.dtgCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProspecto_CellContentClick);
             // 
             // idCliente
             // 
@@ -216,19 +218,41 @@
             this.label1.TabIndex = 44;
             this.label1.Text = "CLIENTES";
             // 
+            // btn_Pagos
+            // 
+            this.btn_Pagos.Location = new System.Drawing.Point(385, 557);
+            this.btn_Pagos.Name = "btn_Pagos";
+            this.btn_Pagos.Size = new System.Drawing.Size(204, 43);
+            this.btn_Pagos.TabIndex = 50;
+            this.btn_Pagos.Text = "Plan de Pagos ";
+            this.btn_Pagos.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1193, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 655);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Pagos);
             this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.dtgProspecto);
+            this.Controls.Add(this.dtgCliente);
             this.Controls.Add(this.label1);
             this.Name = "frmCliente";
             this.Text = "Clientes";
-            this.Load += new System.EventHandler(this.Clientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgProspecto)).EndInit();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,7 +262,6 @@
 
         private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.DataGridView dtgProspecto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
@@ -255,5 +278,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn edad;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.Button btn_Pagos;
+        public System.Windows.Forms.DataGridView dtgCliente;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -144,7 +144,15 @@ namespace Pisto_credito.Interface
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            agregarUsuario();
+
+            try {
+                agregarUsuario();
+                dtgUsuario.DataSource = cl.Select("sp_usuario", 2);
+            }
+            catch(Exception) {
+                MessageBox.Show("No se ha podido realizar la operacion. Por favor rellene todos los campos correctamente", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+           
             dtgUsuario.DataSource = cl.Select("sp_usuario", 2);
         }
 

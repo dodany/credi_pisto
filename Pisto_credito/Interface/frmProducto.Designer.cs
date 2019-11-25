@@ -36,6 +36,7 @@
             this.tasaInteres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.txt_tasaInteres = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_cantidadMin = new System.Windows.Forms.TextBox();
             this.txt_cantidadMax = new System.Windows.Forms.TextBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -55,7 +55,6 @@
             // 
             // dtg_Producto
             // 
-            this.dtg_Producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Producto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
             this.nombre,
@@ -64,6 +63,7 @@
             this.tasaInteres});
             this.dtg_Producto.Location = new System.Drawing.Point(108, 262);
             this.dtg_Producto.Name = "dtg_Producto";
+            this.dtg_Producto.ReadOnly = true;
             this.dtg_Producto.Size = new System.Drawing.Size(531, 156);
             this.dtg_Producto.TabIndex = 35;
             this.dtg_Producto.SelectionChanged += new System.EventHandler(this.dtg_Producto_SelectionChanged);
@@ -73,6 +73,7 @@
             this.idProducto.DataPropertyName = "idProducto";
             this.idProducto.HeaderText = "idProducto";
             this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
             this.idProducto.Width = 70;
             // 
             // nombre
@@ -80,31 +81,35 @@
             this.nombre.DataPropertyName = "nombre";
             this.nombre.HeaderText = "Nombre:";
             this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
             // 
             // cantidadMax
             // 
             this.cantidadMax.DataPropertyName = "cantidadMax";
             this.cantidadMax.HeaderText = "Cantidad Max.";
             this.cantidadMax.Name = "cantidadMax";
+            this.cantidadMax.ReadOnly = true;
             // 
             // cantidadMin
             // 
             this.cantidadMin.DataPropertyName = "cantidadMin";
             this.cantidadMin.HeaderText = "Cantidad Min";
             this.cantidadMin.Name = "cantidadMin";
+            this.cantidadMin.ReadOnly = true;
             // 
             // tasaInteres
             // 
             this.tasaInteres.DataPropertyName = "tasaInteres";
             this.tasaInteres.HeaderText = "Tasa de Interes";
             this.tasaInteres.Name = "tasaInteres";
+            this.tasaInteres.ReadOnly = true;
             this.tasaInteres.Width = 120;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(322, 38);
+            this.label1.Location = new System.Drawing.Point(332, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 16);
             this.label1.TabIndex = 34;
@@ -121,12 +126,22 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_cantidadMin);
             this.groupBox1.Controls.Add(this.txt_cantidadMax);
-            this.groupBox1.Location = new System.Drawing.Point(55, 87);
+            this.groupBox1.Location = new System.Drawing.Point(66, 87);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(623, 146);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(496, 48);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(121, 56);
+            this.btnAgregar.TabIndex = 18;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txt_tasaInteres
             // 
@@ -192,16 +207,6 @@
             this.txt_cantidadMax.Size = new System.Drawing.Size(120, 20);
             this.txt_cantidadMax.TabIndex = 10;
             // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(496, 48);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(121, 56);
-            this.btnAgregar.TabIndex = 18;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
             // btnReporte
             // 
             this.btnReporte.Location = new System.Drawing.Point(461, 444);
@@ -255,6 +260,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Producto";
             this.Load += new System.EventHandler(this.frmProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Producto)).EndInit();

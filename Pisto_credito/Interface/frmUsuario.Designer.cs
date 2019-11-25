@@ -112,6 +112,8 @@
             // 
             // dtgUsuario
             // 
+            this.dtgUsuario.AllowUserToResizeColumns = false;
+            this.dtgUsuario.AllowUserToResizeRows = false;
             this.dtgUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idUsuario,
@@ -125,6 +127,7 @@
             this.dtgUsuario.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtgUsuario.Location = new System.Drawing.Point(49, 251);
             this.dtgUsuario.Name = "dtgUsuario";
+            this.dtgUsuario.ReadOnly = true;
             this.dtgUsuario.Size = new System.Drawing.Size(714, 156);
             this.dtgUsuario.TabIndex = 25;
             this.dtgUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_CellContentClick);
@@ -143,30 +146,35 @@
             this.nombre.DataPropertyName = "nombre";
             this.nombre.HeaderText = "Nombres:";
             this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
             // 
             // usuario
             // 
             this.usuario.DataPropertyName = "usuario";
             this.usuario.HeaderText = "Usuario:";
             this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
             // 
             // correo
             // 
             this.correo.DataPropertyName = "correo";
             this.correo.HeaderText = "Correo:";
             this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
             // 
             // pass
             // 
             this.pass.DataPropertyName = "pass";
             this.pass.HeaderText = "Contraseña;";
             this.pass.Name = "pass";
+            this.pass.ReadOnly = true;
             // 
             // estado
             // 
             this.estado.DataPropertyName = "estado";
             this.estado.HeaderText = "Estado:";
             this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             this.estado.Width = 50;
             // 
             // idRol

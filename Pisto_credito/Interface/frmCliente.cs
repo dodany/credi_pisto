@@ -19,14 +19,20 @@ namespace Pisto_credito
             InitializeComponent();
         }
 
-        private void Clientes_Load(object sender, EventArgs e)
-        {
-            dtgProspecto.DataSource = cl.Select("sp_cliente", 1);
-        }
-
+      
         private void dtgProspecto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void frmCliente_Load(object sender, EventArgs e)
+        {
+            dtgCliente.DataSource = cl.Select("sp_Cliente",1);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dtgCliente.DataSource = cl.Select("sp_Cliente", 1);
         }
     }
 }

@@ -107,8 +107,17 @@ namespace Pisto_credito
                         catch (Exception)
                         {
                             MessageBox.Show("Seleccione el prospecto a evaluar", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
+                       
                     }
+                    }
+                else if (estado == "La evaluacion 3 fue completada. Credito Aprobado.")
+                {
+                   
+                        
+                        MessageBox.Show("Este prospecto ha concluido con exito el proceso de evaluación y ahora es un cliente. ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
+                    
+                }
                 else if (estado == "")
                 {
                     try

@@ -55,11 +55,14 @@ namespace Pisto_credito.Interface
 
                 if (result1 == DialogResult.Yes)
                 {
+                    //try {  try { } } catch { }
+
                     aprobarEvaluacion();
-                    agregarCliente();
                     frmCliente frmClientes = new frmCliente();
                     frmClientes.Show();
-
+                   
+                    agregarCliente();
+                    frmClientes.dtgCliente.DataSource = cl.Select("sp_Cliente", 1);
                     this.Hide();
                     //  btn_Continuar.Enabled = true;
                     // llenarDTG_Prospecto();
@@ -181,13 +184,15 @@ namespace Pisto_credito.Interface
                 else
                 {
 
-                    try { cl.SelectWithParameters("sp_evaluacion3", 10, parametros, datos); }
+                    try { cl.SelectWithParameters("sp_evaluacion3", 10, parametros, datos);
+                        //Boton de aprobar evaluacion es aprobado al agregar correctamente los datos solicitados
+                        btn_Aprobar.Enabled = true;
+                    }
                     catch (Exception) { MessageBox.Show("Los datos ingresados no son válidos, por favor ingresarlos correctamente.", "Datos no válidos", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
                 }
             }
             catch(Exception) { MessageBox.Show("Estos campos son obligatorios. ¡Por favor llenarlos correctamente!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-           
 
            
             llenarDTG_Prospecto();
@@ -206,7 +211,7 @@ namespace Pisto_credito.Interface
 
 
             // datos.Add("@idProspecto"); el Codigo del prospecto tiene que ser igual al de prospecto
-
+            datos.Add("@idProspecto");
             datos.Add("@nombre");
             datos.Add("@dpi");
             datos.Add("@nit");
@@ -221,7 +226,8 @@ namespace Pisto_credito.Interface
             datos.Add("@telTrabajo");
             datos.Add("@idProducto");
             datos.Add("@estado");
-            
+
+               int idCliente = Convert.ToInt32(row.Cells["idProspecto"].Value);
                String nombre = Convert.ToString(row.Cells["nombre"].Value);
                String nit = Convert.ToString(row.Cells["nit"].Value);
                String dpi = Convert.ToString(row.Cells["eldpi"].Value);
@@ -238,6 +244,7 @@ namespace Pisto_credito.Interface
                String estado = Convert.ToString(row.Cells["estado"].Value);
             //parametros.Add(cl.Select("sp_prospecto",7));
 
+            parametros.Add(idCliente);
             parametros.Add(nombre);
             parametros.Add(dpi);
             parametros.Add(nit);
@@ -255,7 +262,7 @@ namespace Pisto_credito.Interface
 
             try
             {
-                cl.Insert("sp_cliente", 0, parametros, datos, false);
+                cl.Insert("sp_cliente",4, parametros, datos, false);
             }
             catch (Exception)
             {
