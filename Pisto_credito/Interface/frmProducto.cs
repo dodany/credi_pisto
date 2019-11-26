@@ -31,11 +31,13 @@ namespace Pisto_credito
             datos.Add("@cantidadMax");
             datos.Add("@cantidadMin");
             datos.Add("@tasaInteres");
-            
+            datos.Add("@plazo");
+
             parametros.Add(txt_nombre.Text);
             parametros.Add(txt_cantidadMax.Text);
             parametros.Add(txt_cantidadMin.Text);
             parametros.Add(txt_tasaInteres.Text);
+            parametros.Add(txt_plazo.Text);
 
             cl.Insert("sp_producto",0,parametros,datos,false);
           
@@ -51,12 +53,14 @@ namespace Pisto_credito
             datos.Add("@cantidadMax");
             datos.Add("@cantidadMin");
             datos.Add("@tasaInteres");
+            datos.Add("@plazo");
 
             parametros.Add(ObtenerId());
             parametros.Add(txt_nombre.Text);
             parametros.Add(txt_cantidadMax.Text);
             parametros.Add(txt_cantidadMin.Text);
             parametros.Add(txt_tasaInteres.Text);
+            parametros.Add(txt_plazo.Text);
 
             cl.Insert("sp_producto", 2, parametros, datos, false);
 
@@ -143,7 +147,8 @@ namespace Pisto_credito
             txt_cantidadMax.Text = Convert.ToString(row.Cells["cantidadMax"].Value);
             txt_cantidadMin.Text = Convert.ToString(row.Cells["cantidadMin"].Value);
             txt_tasaInteres.Text = Convert.ToString(row.Cells["tasaInteres"].Value);
-         
+            txt_plazo.Text = Convert.ToString(row.Cells["plazo"].Value);
+
 
         }
         private void button5_Click(object sender, EventArgs e)
