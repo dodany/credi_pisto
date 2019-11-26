@@ -50,7 +50,6 @@ namespace Pisto_credito
             //parametros.Add(cl.Select("sp_prospecto",7));
 
             parametros.Add(generarCodigoProspecto());
-
             parametros.Add(txt_nombre.Text);
             parametros.Add(txt_dpi.Text);
             parametros.Add(txt_nit.Text);
@@ -65,25 +64,24 @@ namespace Pisto_credito
             parametros.Add(txt_Domicilio.Text);
             parametros.Add(txt_Trabajo.Text);
 
+            cl.Insert("sp_prospecto", 9, parametros, datos, false);
+            /*           try
+              {
+                  cl.Insert("sp_prospecto", 9, parametros, datos, false);
 
-          
-            try
-            {
-                cl.Insert("sp_prospecto", 9, parametros, datos, false);
-
-            }
-            catch (Exception)
-            {
-                try
-                {
-                    { cl.Insert("sp_prospecto", 10, parametros, datos, false); }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Rellene correctamente los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            
+              }
+              catch (Exception)
+              {
+                  try
+                  {
+                      { cl.Insert("sp_prospecto", 10, parametros, datos, false); }
+                  }
+                  catch (Exception)
+                  {
+                      MessageBox.Show("Rellene correctamente los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  }
+              }
+              */
         }
         
         private void label5_Click(object sender, EventArgs e)
@@ -124,7 +122,9 @@ namespace Pisto_credito
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+           
 
+            
             try
             {
                 agregarProspecto();
@@ -135,7 +135,6 @@ namespace Pisto_credito
                 MessageBox.Show("No se ha podido realizar la operacion. Por favor rellene todos los campos correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-                dtgProspecto.DataSource = cl.Select("sp_prospecto", 1);
         }
 
 
@@ -336,7 +335,6 @@ namespace Pisto_credito
             Console.WriteLine(codigo+numIncremet++);
           
             return codigo;
-
         }
     }
 }

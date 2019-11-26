@@ -126,7 +126,7 @@ namespace Pisto_credito.Interface
             txt_correo.Text = Convert.ToString(row.Cells["correo"].Value);
             txt_usuario.Text = Convert.ToString(row.Cells["usuario"].Value);
             txt_contraseña.Text = Convert.ToString(row.Cells["pass"].Value);
-            cmb_idRol.Text = Convert.ToString(row.Cells["idRol"].Value);
+            cmb_idRol.Text = Convert.ToString(row.Cells["rol"].Value);
 
         }
 
