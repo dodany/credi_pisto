@@ -117,9 +117,7 @@ namespace Pisto_credito.Interface
 
         private void gestionarPermisosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmGestionPermisos frmGestionar = new frmGestionPermisos();
-            frmGestionar.MdiParent = this;
-            frmGestionar.Show();
+           
         }
 
     }
