@@ -118,7 +118,13 @@ namespace Pisto_credito.Interface
         private void gestionarPermisosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+           
         }
+
+
+
+        
+
     }
     
 }

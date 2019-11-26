@@ -52,6 +52,12 @@
     <Compile Include="Interface\frmEvaluaciones.Designer.cs">
       <DependentUpon>frmEvaluaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interface\frmGestionPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\frmGestionPermisos.Designer.cs">
+      <DependentUpon>frmGestionPermisos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interface\frmPlanPagos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     <Compile Include="src\BD\clConexion.cs" />
     <EmbeddedResource Include="Interface\frmEvaluaciones.resx">
       <DependentUpon>frmEvaluaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\frmGestionPermisos.resx">
+      <DependentUpon>frmGestionPermisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface\frmPlanPagos.resx">
       <DependentUpon>frmPlanPagos.cs</DependentUpon>

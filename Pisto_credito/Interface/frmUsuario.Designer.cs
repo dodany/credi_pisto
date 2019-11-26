@@ -34,14 +34,6 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnDeshabilitar = new System.Windows.Forms.Button();
             this.dtgUsuario = new System.Windows.Forms.DataGridView();
-            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pass = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,6 +48,14 @@
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.txt_correo = new System.Windows.Forms.TextBox();
             this.btnHabilitar = new System.Windows.Forms.Button();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pass = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -122,7 +122,7 @@
             this.correo,
             this.pass,
             this.estado,
-            this.idRol,
+            this.Rol,
             this.fechaIngreso});
             this.dtgUsuario.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtgUsuario.Location = new System.Drawing.Point(49, 251);
@@ -132,66 +132,6 @@
             this.dtgUsuario.TabIndex = 25;
             this.dtgUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_CellContentClick);
             this.dtgUsuario.SelectionChanged += new System.EventHandler(this.dtgUsuario_SelectionChanged);
-            // 
-            // idUsuario
-            // 
-            this.idUsuario.DataPropertyName = "idUsuario";
-            this.idUsuario.HeaderText = "idUsuario";
-            this.idUsuario.Name = "idUsuario";
-            this.idUsuario.ReadOnly = true;
-            this.idUsuario.Width = 70;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombres:";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // usuario
-            // 
-            this.usuario.DataPropertyName = "usuario";
-            this.usuario.HeaderText = "Usuario:";
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            // 
-            // correo
-            // 
-            this.correo.DataPropertyName = "correo";
-            this.correo.HeaderText = "Correo:";
-            this.correo.Name = "correo";
-            this.correo.ReadOnly = true;
-            // 
-            // pass
-            // 
-            this.pass.DataPropertyName = "pass";
-            this.pass.HeaderText = "Contraseña;";
-            this.pass.Name = "pass";
-            this.pass.ReadOnly = true;
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "Estado:";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Width = 50;
-            // 
-            // idRol
-            // 
-            this.idRol.DataPropertyName = "idRol";
-            this.idRol.HeaderText = "idRol";
-            this.idRol.Name = "idRol";
-            this.idRol.ReadOnly = true;
-            this.idRol.Width = 50;
-            // 
-            // fechaIngreso
-            // 
-            this.fechaIngreso.DataPropertyName = "fechaIngreso";
-            this.fechaIngreso.HeaderText = "Fecha de Ingreso";
-            this.fechaIngreso.Name = "fechaIngreso";
-            this.fechaIngreso.ReadOnly = true;
-            this.fechaIngreso.Width = 115;
             // 
             // label1
             // 
@@ -326,6 +266,66 @@
             this.btnHabilitar.UseVisualStyleBackColor = true;
             this.btnHabilitar.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // idUsuario
+            // 
+            this.idUsuario.DataPropertyName = "idUsuario";
+            this.idUsuario.HeaderText = "idUsuario";
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.ReadOnly = true;
+            this.idUsuario.Width = 70;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombres:";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // usuario
+            // 
+            this.usuario.DataPropertyName = "usuario";
+            this.usuario.HeaderText = "Usuario:";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            // 
+            // correo
+            // 
+            this.correo.DataPropertyName = "correo";
+            this.correo.HeaderText = "Correo:";
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
+            // 
+            // pass
+            // 
+            this.pass.DataPropertyName = "pass";
+            this.pass.HeaderText = "Contraseña;";
+            this.pass.Name = "pass";
+            this.pass.ReadOnly = true;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "Estado:";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Width = 50;
+            // 
+            // Rol
+            // 
+            this.Rol.DataPropertyName = "rol";
+            this.Rol.HeaderText = "Rol";
+            this.Rol.Name = "Rol";
+            this.Rol.ReadOnly = true;
+            this.Rol.Width = 50;
+            // 
+            // fechaIngreso
+            // 
+            this.fechaIngreso.DataPropertyName = "fechaIngreso";
+            this.fechaIngreso.HeaderText = "Fecha de Ingreso";
+            this.fechaIngreso.Name = "fechaIngreso";
+            this.fechaIngreso.ReadOnly = true;
+            this.fechaIngreso.Width = 115;
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,14 +359,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnDeshabilitar;
         private System.Windows.Forms.DataGridView dtgUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pass;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaIngreso;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
@@ -381,5 +373,13 @@
         private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.TextBox txt_correo;
         private System.Windows.Forms.Button btnHabilitar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pass;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaIngreso;
     }
 }
