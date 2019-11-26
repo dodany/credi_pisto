@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dtg_Producto = new System.Windows.Forms.DataGridView();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tasaInteres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -49,6 +44,14 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_plazo = new System.Windows.Forms.TextBox();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tasaInteres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Producto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,50 +63,14 @@
             this.nombre,
             this.cantidadMax,
             this.cantidadMin,
-            this.tasaInteres});
-            this.dtg_Producto.Location = new System.Drawing.Point(108, 262);
+            this.tasaInteres,
+            this.plazo});
+            this.dtg_Producto.Location = new System.Drawing.Point(79, 261);
             this.dtg_Producto.Name = "dtg_Producto";
             this.dtg_Producto.ReadOnly = true;
-            this.dtg_Producto.Size = new System.Drawing.Size(531, 156);
+            this.dtg_Producto.Size = new System.Drawing.Size(593, 156);
             this.dtg_Producto.TabIndex = 35;
             this.dtg_Producto.SelectionChanged += new System.EventHandler(this.dtg_Producto_SelectionChanged);
-            // 
-            // idProducto
-            // 
-            this.idProducto.DataPropertyName = "idProducto";
-            this.idProducto.HeaderText = "idProducto";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            this.idProducto.Width = 70;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre:";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // cantidadMax
-            // 
-            this.cantidadMax.DataPropertyName = "cantidadMax";
-            this.cantidadMax.HeaderText = "Cantidad Max.";
-            this.cantidadMax.Name = "cantidadMax";
-            this.cantidadMax.ReadOnly = true;
-            // 
-            // cantidadMin
-            // 
-            this.cantidadMin.DataPropertyName = "cantidadMin";
-            this.cantidadMin.HeaderText = "Cantidad Min";
-            this.cantidadMin.Name = "cantidadMin";
-            this.cantidadMin.ReadOnly = true;
-            // 
-            // tasaInteres
-            // 
-            this.tasaInteres.DataPropertyName = "tasaInteres";
-            this.tasaInteres.HeaderText = "Tasa de Interes";
-            this.tasaInteres.Name = "tasaInteres";
-            this.tasaInteres.ReadOnly = true;
-            this.tasaInteres.Width = 120;
             // 
             // label1
             // 
@@ -117,6 +84,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txt_plazo);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.txt_tasaInteres);
             this.groupBox1.Controls.Add(this.label2);
@@ -247,6 +216,67 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(278, 112);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(117, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Plazo de pago (meses):";
+            // 
+            // txt_plazo
+            // 
+            this.txt_plazo.Location = new System.Drawing.Point(395, 109);
+            this.txt_plazo.Name = "txt_plazo";
+            this.txt_plazo.Size = new System.Drawing.Size(54, 20);
+            this.txt_plazo.TabIndex = 20;
+            // 
+            // idProducto
+            // 
+            this.idProducto.DataPropertyName = "idProducto";
+            this.idProducto.HeaderText = "idProducto";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            this.idProducto.Width = 70;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre:";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // cantidadMax
+            // 
+            this.cantidadMax.DataPropertyName = "cantidadMax";
+            this.cantidadMax.HeaderText = "Cantidad Max.";
+            this.cantidadMax.Name = "cantidadMax";
+            this.cantidadMax.ReadOnly = true;
+            // 
+            // cantidadMin
+            // 
+            this.cantidadMin.DataPropertyName = "cantidadMin";
+            this.cantidadMin.HeaderText = "Cantidad Min";
+            this.cantidadMin.Name = "cantidadMin";
+            this.cantidadMin.ReadOnly = true;
+            // 
+            // tasaInteres
+            // 
+            this.tasaInteres.DataPropertyName = "tasaInteres";
+            this.tasaInteres.HeaderText = "Tasa de Interes";
+            this.tasaInteres.Name = "tasaInteres";
+            this.tasaInteres.ReadOnly = true;
+            this.tasaInteres.Width = 120;
+            // 
+            // plazo
+            // 
+            this.plazo.DataPropertyName = "plazo";
+            this.plazo.HeaderText = "Plazo";
+            this.plazo.Name = "plazo";
+            this.plazo.ReadOnly = true;
+            this.plazo.Width = 60;
+            // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,11 +303,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dtg_Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadMax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadMin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tasaInteres;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_tasaInteres;
@@ -293,5 +318,13 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txt_plazo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadMax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadMin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tasaInteres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn plazo;
     }
 }
