@@ -24,6 +24,7 @@ namespace Pisto_credito.Interface
         
         private void frmEvaluacion1_Load(object sender, EventArgs e)
         {
+           
             llenarDTG_Prospecto();
             llenarCombo();
             btn_Continuar.Enabled = false;
@@ -54,8 +55,9 @@ namespace Pisto_credito.Interface
 
                 if (result1 == DialogResult.Yes)
                 {
-
                     aprobarEvaluacion();
+                    agregarEvaluacion2();
+                   
                     btn_Continuar.Enabled = true;
                     MessageBox.Show("La evaluación ha sido aprobada correctamente. ", "Evaluacion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -72,6 +74,16 @@ namespace Pisto_credito.Interface
             }
         }
 
+        private void agregarEvaluacion2()
+        {
+            ArrayList parametro = new ArrayList();
+            ArrayList dato = new ArrayList();
+
+            dato.Add("@idProspecto");
+            parametro.Add(ObtenerId());
+
+            cl.Insert("sp_evaluacion2", 0, parametro, dato, false);
+        }
         public void aprobarEvaluacion()
         {
             ArrayList parametro = new ArrayList();
@@ -301,6 +313,7 @@ namespace Pisto_credito.Interface
         }
             public void iniciarEvaluacion2()
             {
+               /*
                 ArrayList parametro = new ArrayList();
                 ArrayList dato = new ArrayList();
 
@@ -308,6 +321,7 @@ namespace Pisto_credito.Interface
                 parametro.Add(ObtenerId());
 
                 cl.Insert("sp_evaluacion2", 0, parametro, dato, false);
+                */
                 frmEvaluacion2 frmEvalua2 = new frmEvaluacion2();
                 frmEvalua2.DPI = txt_dpi.Text;
                 frmEvalua2.Show();

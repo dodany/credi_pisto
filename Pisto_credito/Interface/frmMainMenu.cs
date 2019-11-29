@@ -88,15 +88,19 @@ namespace Pisto_credito.Interface
             frmProducto frmProducto = new frmProducto();
             frmProducto.MdiParent = this;
             frmProducto.Show();
-           
         }
 
         private void verificarProspectosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            /*
             frmEvaluarProspectos frmEvaluar = new frmEvaluarProspectos();
             frmEvaluar.MdiParent = this;
             frmEvaluar.Show();
+            */
 
+            frmMenuEvaluaciones frmMenuEvaluacion = new frmMenuEvaluaciones();
+            frmMenuEvaluacion.MdiParent = this;
+            frmMenuEvaluacion.Show();
         }
 
         private void verClientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,7 +108,6 @@ namespace Pisto_credito.Interface
             frmCliente frmClientes = new frmCliente();
             frmClientes.MdiParent = this;
             frmClientes.Show();
-
         }
 
         private void evaluacionesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -121,10 +124,12 @@ namespace Pisto_credito.Interface
            
         }
 
-
-
-        
-
+        private void estadoClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPlanPagos frmPlanPago = new frmPlanPagos();
+            frmPlanPago.MdiParent = this;   
+            frmPlanPago.Show();
+        }
     }
     
 }

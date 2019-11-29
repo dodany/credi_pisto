@@ -504,7 +504,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmEvaluacion1";
-            this.Text = "Evaluacion 1";
+            this.Text = "3";
             this.Load += new System.EventHandler(this.frmEvaluacion1_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

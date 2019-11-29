@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\frmConfirmacionCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\frmConfirmacionCliente.Designer.cs">
+      <DependentUpon>frmConfirmacionCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interface\frmEvaluaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +64,18 @@
     </Compile>
     <Compile Include="Interface\frmGestionPermisos.Designer.cs">
       <DependentUpon>frmGestionPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\frmListaProspectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\frmListaProspectos.Designer.cs">
+      <DependentUpon>frmListaProspectos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\frmMenuEvaluaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\frmMenuEvaluaciones.Designer.cs">
+      <DependentUpon>frmMenuEvaluaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Interface\frmPlanPagos.cs">
       <SubType>Form</SubType>
@@ -127,11 +146,20 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\BD\clConexion.cs" />
+    <EmbeddedResource Include="Interface\frmConfirmacionCliente.resx">
+      <DependentUpon>frmConfirmacionCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interface\frmEvaluaciones.resx">
       <DependentUpon>frmEvaluaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface\frmGestionPermisos.resx">
       <DependentUpon>frmGestionPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\frmListaProspectos.resx">
+      <DependentUpon>frmListaProspectos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\frmMenuEvaluaciones.resx">
+      <DependentUpon>frmMenuEvaluaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface\frmPlanPagos.resx">
       <DependentUpon>frmPlanPagos.cs</DependentUpon>

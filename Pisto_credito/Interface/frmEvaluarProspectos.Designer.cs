@@ -157,6 +157,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_dpi);
             this.Name = "frmEvaluarProspectos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Evaluar Prospectos";
             this.Load += new System.EventHandler(this.frmEvaluarProspectos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Evaluacion)).EndInit();

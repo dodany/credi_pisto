@@ -16,5 +16,15 @@ namespace Pisto_credito
         {
             InitializeComponent();
         }
+
+        private void frmPlanPagos_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void calculoCuota()
+        {
+
+
+        }
     }
 }

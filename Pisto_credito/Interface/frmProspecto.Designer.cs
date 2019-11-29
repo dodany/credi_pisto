@@ -33,6 +33,21 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dtgProspecto = new System.Windows.Forms.DataGridView();
+            this.idProspecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dpi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tel1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tel2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_Domicilio = new System.Windows.Forms.TextBox();
@@ -64,21 +79,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.idProspecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dpi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tel1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tel2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProspecto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -147,13 +147,128 @@
             this.edad,
             this.estado});
             this.dtgProspecto.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dtgProspecto.Location = new System.Drawing.Point(82, 360);
+            this.dtgProspecto.Location = new System.Drawing.Point(82, 364);
+            this.dtgProspecto.MultiSelect = false;
             this.dtgProspecto.Name = "dtgProspecto";
             this.dtgProspecto.ReadOnly = true;
+            this.dtgProspecto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgProspecto.Size = new System.Drawing.Size(1198, 169);
             this.dtgProspecto.TabIndex = 36;
             this.dtgProspecto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProspecto_CellContentClick);
+            this.dtgProspecto.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProspecto_RowLeave);
+            this.dtgProspecto.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dtgProspecto_RowsAdded);
             this.dtgProspecto.SelectionChanged += new System.EventHandler(this.dtgProspecto_SelectionChanged_1);
+            this.dtgProspecto.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dtgProspecto_UserAddedRow);
+            // 
+            // idProspecto
+            // 
+            this.idProspecto.DataPropertyName = "idProspecto";
+            this.idProspecto.HeaderText = "idProspecto";
+            this.idProspecto.Name = "idProspecto";
+            this.idProspecto.ReadOnly = true;
+            this.idProspecto.Width = 80;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombres:";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // dpi
+            // 
+            this.dpi.DataPropertyName = "dpi";
+            this.dpi.HeaderText = "DPI:";
+            this.dpi.Name = "dpi";
+            this.dpi.ReadOnly = true;
+            this.dpi.Width = 80;
+            // 
+            // nit
+            // 
+            this.nit.DataPropertyName = "nit";
+            this.nit.HeaderText = "Nit:";
+            this.nit.Name = "nit";
+            this.nit.ReadOnly = true;
+            this.nit.Width = 80;
+            // 
+            // correo1
+            // 
+            this.correo1.DataPropertyName = "correo1";
+            this.correo1.HeaderText = "Correo 1";
+            this.correo1.Name = "correo1";
+            this.correo1.ReadOnly = true;
+            // 
+            // correo2
+            // 
+            this.correo2.DataPropertyName = "correo2";
+            this.correo2.HeaderText = "Correo 2";
+            this.correo2.Name = "correo2";
+            this.correo2.ReadOnly = true;
+            // 
+            // tel1
+            // 
+            this.tel1.DataPropertyName = "tel1";
+            this.tel1.HeaderText = "Telefono 1";
+            this.tel1.Name = "tel1";
+            this.tel1.ReadOnly = true;
+            // 
+            // tel2
+            // 
+            this.tel2.DataPropertyName = "tel2";
+            this.tel2.HeaderText = "Telefono 2";
+            this.tel2.Name = "tel2";
+            this.tel2.ReadOnly = true;
+            // 
+            // domicilio
+            // 
+            this.domicilio.DataPropertyName = "domicilio";
+            this.domicilio.HeaderText = "Domicilio";
+            this.domicilio.Name = "domicilio";
+            this.domicilio.ReadOnly = true;
+            // 
+            // telDomicilio
+            // 
+            this.telDomicilio.DataPropertyName = "telDomicilio";
+            this.telDomicilio.HeaderText = "Tel. Domicilio";
+            this.telDomicilio.Name = "telDomicilio";
+            this.telDomicilio.ReadOnly = true;
+            // 
+            // trabajo
+            // 
+            this.trabajo.DataPropertyName = "trabajo";
+            this.trabajo.HeaderText = "Trabajo";
+            this.trabajo.Name = "trabajo";
+            this.trabajo.ReadOnly = true;
+            // 
+            // telTrabajo
+            // 
+            this.telTrabajo.DataPropertyName = "telTrabajo";
+            this.telTrabajo.HeaderText = "Tel. Trabajo";
+            this.telTrabajo.Name = "telTrabajo";
+            this.telTrabajo.ReadOnly = true;
+            // 
+            // idProducto
+            // 
+            this.idProducto.DataPropertyName = "nombre1";
+            this.idProducto.HeaderText = "Producto";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            this.idProducto.Width = 80;
+            // 
+            // edad
+            // 
+            this.edad.DataPropertyName = "edad";
+            this.edad.HeaderText = "Edad";
+            this.edad.Name = "edad";
+            this.edad.ReadOnly = true;
+            this.edad.Width = 60;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             // 
             // label1
             // 
@@ -193,6 +308,7 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Prospecto";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txt_Domicilio
             // 
@@ -443,116 +559,6 @@
             this.button1.Text = "Evaluar Prospectos";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // idProspecto
-            // 
-            this.idProspecto.DataPropertyName = "idProspecto";
-            this.idProspecto.HeaderText = "idProspecto";
-            this.idProspecto.Name = "idProspecto";
-            this.idProspecto.ReadOnly = true;
-            this.idProspecto.Width = 80;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombres:";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // dpi
-            // 
-            this.dpi.DataPropertyName = "dpi";
-            this.dpi.HeaderText = "DPI:";
-            this.dpi.Name = "dpi";
-            this.dpi.ReadOnly = true;
-            this.dpi.Width = 80;
-            // 
-            // nit
-            // 
-            this.nit.DataPropertyName = "nit";
-            this.nit.HeaderText = "Nit:";
-            this.nit.Name = "nit";
-            this.nit.ReadOnly = true;
-            this.nit.Width = 80;
-            // 
-            // correo1
-            // 
-            this.correo1.DataPropertyName = "correo1";
-            this.correo1.HeaderText = "Correo 1";
-            this.correo1.Name = "correo1";
-            this.correo1.ReadOnly = true;
-            // 
-            // correo2
-            // 
-            this.correo2.DataPropertyName = "correo2";
-            this.correo2.HeaderText = "Correo 2";
-            this.correo2.Name = "correo2";
-            this.correo2.ReadOnly = true;
-            // 
-            // tel1
-            // 
-            this.tel1.DataPropertyName = "tel1";
-            this.tel1.HeaderText = "Telefono 1";
-            this.tel1.Name = "tel1";
-            this.tel1.ReadOnly = true;
-            // 
-            // tel2
-            // 
-            this.tel2.DataPropertyName = "tel2";
-            this.tel2.HeaderText = "Telefono 2";
-            this.tel2.Name = "tel2";
-            this.tel2.ReadOnly = true;
-            // 
-            // domicilio
-            // 
-            this.domicilio.DataPropertyName = "domicilio";
-            this.domicilio.HeaderText = "Domicilio";
-            this.domicilio.Name = "domicilio";
-            this.domicilio.ReadOnly = true;
-            // 
-            // telDomicilio
-            // 
-            this.telDomicilio.DataPropertyName = "telDomicilio";
-            this.telDomicilio.HeaderText = "Tel. Domicilio";
-            this.telDomicilio.Name = "telDomicilio";
-            this.telDomicilio.ReadOnly = true;
-            // 
-            // trabajo
-            // 
-            this.trabajo.DataPropertyName = "trabajo";
-            this.trabajo.HeaderText = "Trabajo";
-            this.trabajo.Name = "trabajo";
-            this.trabajo.ReadOnly = true;
-            // 
-            // telTrabajo
-            // 
-            this.telTrabajo.DataPropertyName = "telTrabajo";
-            this.telTrabajo.HeaderText = "Tel. Trabajo";
-            this.telTrabajo.Name = "telTrabajo";
-            this.telTrabajo.ReadOnly = true;
-            // 
-            // idProducto
-            // 
-            this.idProducto.DataPropertyName = "nombre1";
-            this.idProducto.HeaderText = "Producto";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            this.idProducto.Width = 80;
-            // 
-            // edad
-            // 
-            this.edad.DataPropertyName = "edad";
-            this.edad.HeaderText = "Edad";
-            this.edad.Name = "edad";
-            this.edad.ReadOnly = true;
-            this.edad.Width = 60;
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
             // 
             // frmProspecto
             // 

@@ -65,6 +65,8 @@ namespace Pisto_credito
             parametros.Add(txt_Trabajo.Text);
 
             cl.Insert("sp_prospecto", 9, parametros, datos, false);
+
+            dtgProspecto.DataSource = cl.Select("sp_prospecto", 1);
             /*           try
               {
                   cl.Insert("sp_prospecto", 9, parametros, datos, false);
@@ -97,10 +99,10 @@ namespace Pisto_credito
 
         private void frmProspecto_Load(object sender, EventArgs e)
         {
-            generarCodigoProspecto();
             llenarCombo();
             dtgProspecto.DataSource = cl.Select("sp_prospecto", 1);
             cmb_producto.Text = "Elegir una opcion";
+
         }
 
       
@@ -122,22 +124,60 @@ namespace Pisto_credito
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-           
 
-            
+          
+
             try
             {
                 agregarProspecto();
+                agregarEvaluacion1();
                 dtgProspecto.DataSource = cl.Select("sp_prospecto", 1);
             }
             catch (Exception)
             {
                 MessageBox.Show("No se ha podido realizar la operacion. Por favor rellene todos los campos correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
+        private void agregarEvaluacion1()
+        {
+            ArrayList parametro = new ArrayList();
+            ArrayList dato = new ArrayList();
+            DataTable dt = new DataTable();
+           /* dt = cl.SelectWithParameters("sp_prospecto", 14,parametro,dato);
 
+            if (dt.Rows.Count >= 0)
+            {
+                DataTableReader reader = dt.CreateDataReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+
+                    int idProspecto = Convert.ToInt32(reader["idProspecto"]);
+                    Console.WriteLine(idProspecto);
+                    
+                }
+            }
+            */
+            int col = 0;
+
+            
+           
+            string idProspecto = dtgProspecto.Rows[dtgProspecto.Rows.Count - 2].Cells[col].Value.ToString();
+
+
+            //dtgProspecto.Rows[dtgProspecto.Rows.Count - 2].Selected = true;
+            //string valorcelda = dtgProspecto[col, contarRegistros - 1].Value.ToString();
+
+
+
+
+            dato.Add("@idProspecto");
+            parametro.Add(idProspecto);
+
+            cl.Insert("sp_evaluacion1", 0, parametro, dato, false);
+
+        }
         public void eliminarProspecto()
         {
             ArrayList parametros = new ArrayList();
@@ -149,7 +189,7 @@ namespace Pisto_credito
         }
         public int ObtenerId()
         {
-
+            
             DataGridViewRow row = dtgProspecto.CurrentRow;
             if (row != null)
             {
@@ -284,7 +324,17 @@ namespace Pisto_credito
 
         private void dtgProspecto_SelectionChanged_1(object sender, EventArgs e)
         {
-            mostrarDatosParaEditar();
+            try
+            {
+                mostrarDatosParaEditar();
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione una fila para poder editarla",
+                " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+           
         }
 
         private void btnReporte_Click(object sender, EventArgs e)
@@ -294,9 +344,9 @@ namespace Pisto_credito
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            evaluacion();
-        
+            frmMenuEvaluaciones frmMenu = new frmMenuEvaluaciones();
+            frmMenu.Show();
+            //evaluacion();
         }
 
         private void evaluacion()
@@ -312,7 +362,6 @@ namespace Pisto_credito
             // frmEvaluarProspectos.mdiObj2.txt_dpi.Text="XD";
             frmEvaluarProspectos frmEvaluarProspecto = new frmEvaluarProspectos();
             frmEvaluarProspecto.Show();
-
         }
 
         private void dtgProspecto_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -336,5 +385,39 @@ namespace Pisto_credito
           
             return codigo;
         }
+
+        private void dtgProspecto_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            // dtgProspecto.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //DataGridViewRFow row = dtgProspecto.CurrentRow;
+            //dtgProspecto.CurrentCell = dtgProspecto.SelectedRows(row.Index).Cells[1];
+
+            //string valorCelda = DataGridView.Rows[countRows]["ID"].ToString();
+            
+        }
+
+        private void dtgProspecto_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            //dtgProspecto.Rows[dtgProspecto.Rows.Count - 2].Selected = true;
+            //dtgProspecto.MultiSelect = false;
+            //dtgProspecto.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //MessageBox.Show("haha");
+        }
+
+        private void dtgProspecto_RowLeave(object sender, DataGridViewCellEventArgs e)
+        {
+         
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        /*string texto = Microsoft.VisualBasic.Interaction.InputBox(
+              "Texto de la pregunta",
+              "Titulo del diálogo",
+              "Respuesta por defecto");
+           */
     }
 }

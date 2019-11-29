@@ -90,7 +90,7 @@
             // btn_Aprobar
             // 
             this.btn_Aprobar.Enabled = false;
-            this.btn_Aprobar.Location = new System.Drawing.Point(213, 366);
+            this.btn_Aprobar.Location = new System.Drawing.Point(204, 366);
             this.btn_Aprobar.Name = "btn_Aprobar";
             this.btn_Aprobar.Size = new System.Drawing.Size(186, 55);
             this.btn_Aprobar.TabIndex = 43;

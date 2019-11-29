@@ -27,7 +27,6 @@ namespace Pisto_credito
 
         public void consultaProspecto()
         {
-            
             ArrayList parametros = new ArrayList();
             ArrayList datos = new ArrayList();
 
@@ -36,12 +35,11 @@ namespace Pisto_credito
             frmEvaluacion1 frmEvaluar = new frmEvaluacion1();
             frmEvaluar.DPI = txt_dpi.Text;
             dtg_Evaluacion.DataSource = cl.SelectWithParameters("sp_prospecto",8,parametros,datos);
-            
         }
+
         private void frmEvaluarProspectos_Load(object sender, EventArgs e)
         {
             mdiObj2 = this;
-           
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -63,7 +61,7 @@ namespace Pisto_credito
         {
             seleccionarEvaluacion();
         }
-        private void seleccionarEvaluacion()
+       public void seleccionarEvaluacion()
         {
             ArrayList parametros = new ArrayList();
             ArrayList datos = new ArrayList();
@@ -140,19 +138,24 @@ namespace Pisto_credito
         }
         public void iniciarEvaluacion1()
         {
-            ArrayList parametro = new ArrayList();
-            ArrayList dato = new ArrayList();
+            /*
+             ArrayList parametro = new ArrayList();
+             ArrayList dato = new ArrayList();
 
-            dato.Add("@idProspecto");
-            parametro.Add(ObtenerId());
-          
-            cl.Insert("sp_evaluacion1", 0, parametro, dato, false);
+             dato.Add("@idProspecto");
+             parametro.Add(ObtenerId());
+
+             cl.Insert("sp_evaluacion1", 0, parametro, dato, false);
+             */
+
+     
             frmEvaluacion1 frmEvalua1 = new frmEvaluacion1();
             frmEvalua1.DPI = txt_dpi.Text;
             frmEvalua1.Show();
         }
         public void iniciarEvaluacion2()
         {
+            /*
             ArrayList parametro = new ArrayList();
             ArrayList dato = new ArrayList();
 
@@ -160,20 +163,24 @@ namespace Pisto_credito
             parametro.Add(ObtenerId());
 
             cl.Insert("sp_evaluacion2", 0, parametro, dato, false);
+            */
             frmEvaluacion2 frmEvalua2 = new frmEvaluacion2();
             frmEvalua2.DPI = txt_dpi.Text;
             frmEvalua2.Show();
+            
         }
-        
+
         public void iniciarEvaluacion3()
         {
-            ArrayList parametro = new ArrayList();
-            ArrayList dato = new ArrayList();
+            /*
+           ArrayList parametro = new ArrayList();
+           ArrayList dato = new ArrayList();
 
-            dato.Add("@idProspecto");
-            parametro.Add(ObtenerId());
+           dato.Add("@idProspecto");
+           parametro.Add(ObtenerId());
 
-            cl.Insert("sp_evaluacion3", 0, parametro, dato, false);
+           cl.Insert("sp_evaluacion3", 0, parametro, dato, false);
+           */
             frmEvaluacion3 frmEvalua3 = new frmEvaluacion3();
             frmEvalua3.DPI = txt_dpi.Text;
             frmEvalua3.idProspect = Convert.ToInt32(txt_idProspecto.Text);

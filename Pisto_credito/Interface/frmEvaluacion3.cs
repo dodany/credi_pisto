@@ -58,15 +58,21 @@ namespace Pisto_credito.Interface
                     //try {  try { } } catch { }
 
                     aprobarEvaluacion();
-                    frmCliente frmClientes = new frmCliente();
-                    frmClientes.Show();
-                   
+                    //frmCliente frmClientes = new frmCliente();
+                    //frmClientes.Show();
+
+                    crearPlanPago();
                     agregarCliente();
-                    frmClientes.dtgCliente.DataSource = cl.Select("sp_Cliente", 1);
-                    this.Hide();
-                    //  btn_Continuar.Enabled = true;
+                    //frmClientes.dtgCliente.DataSource = cl.Select("sp_Cliente", 1);
+
+
                     // llenarDTG_Prospecto();
                     MessageBox.Show("La evaluación ha sido aprobada correctamente. El proceso de evaluaciones ha sido completado con éxito, el credito está aprobado. ", "Evaluaciones Completadas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    frmConfirmacionCliente frmConfirmacion = new frmConfirmacionCliente();
+                    frmConfirmacion.txt_idProspecto.Text = txt_idProspecto.Text;
+                    frmConfirmacion.Show();
+                    //MessageBox.Show("Ingrese la cantidad que el prospecto solicita", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -86,7 +92,17 @@ namespace Pisto_credito.Interface
         /// </summary>
         /// 
 
+        public void crearPlanPago()
+        {
+            ArrayList parametro = new ArrayList();
+            ArrayList dato = new ArrayList();
 
+            dato.Add("@idCliente");
+            parametro.Add(txt_idProspecto.Text);
+
+
+            cl.Insert("sp_planPagos",0, parametro, dato,false);
+        }
         public void aprobarEvaluacion()
         {
             ArrayList parametro = new ArrayList();

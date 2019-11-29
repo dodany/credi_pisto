@@ -112,8 +112,6 @@
             // 
             // dtgUsuario
             // 
-            this.dtgUsuario.AllowUserToResizeColumns = false;
-            this.dtgUsuario.AllowUserToResizeRows = false;
             this.dtgUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idUsuario,
@@ -125,10 +123,10 @@
             this.Rol,
             this.fechaIngreso});
             this.dtgUsuario.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dtgUsuario.Location = new System.Drawing.Point(49, 251);
+            this.dtgUsuario.Location = new System.Drawing.Point(41, 244);
             this.dtgUsuario.Name = "dtgUsuario";
             this.dtgUsuario.ReadOnly = true;
-            this.dtgUsuario.Size = new System.Drawing.Size(714, 156);
+            this.dtgUsuario.Size = new System.Drawing.Size(723, 156);
             this.dtgUsuario.TabIndex = 25;
             this.dtgUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_CellContentClick);
             this.dtgUsuario.SelectionChanged += new System.EventHandler(this.dtgUsuario_SelectionChanged);
@@ -272,7 +270,7 @@
             this.idUsuario.HeaderText = "idUsuario";
             this.idUsuario.Name = "idUsuario";
             this.idUsuario.ReadOnly = true;
-            this.idUsuario.Width = 70;
+            this.idUsuario.Width = 75;
             // 
             // nombre
             // 
@@ -280,6 +278,7 @@
             this.nombre.HeaderText = "Nombres:";
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
+            this.nombre.Width = 83;
             // 
             // usuario
             // 
@@ -287,6 +286,7 @@
             this.usuario.HeaderText = "Usuario:";
             this.usuario.Name = "usuario";
             this.usuario.ReadOnly = true;
+            this.usuario.Width = 84;
             // 
             // correo
             // 
@@ -294,6 +294,7 @@
             this.correo.HeaderText = "Correo:";
             this.correo.Name = "correo";
             this.correo.ReadOnly = true;
+            this.correo.Width = 84;
             // 
             // pass
             // 
@@ -301,6 +302,7 @@
             this.pass.HeaderText = "Contraseña;";
             this.pass.Name = "pass";
             this.pass.ReadOnly = true;
+            this.pass.Width = 83;
             // 
             // estado
             // 
@@ -308,7 +310,7 @@
             this.estado.HeaderText = "Estado:";
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
-            this.estado.Width = 50;
+            this.estado.Width = 84;
             // 
             // Rol
             // 
@@ -316,7 +318,7 @@
             this.Rol.HeaderText = "Rol";
             this.Rol.Name = "Rol";
             this.Rol.ReadOnly = true;
-            this.Rol.Width = 50;
+            this.Rol.Width = 85;
             // 
             // fechaIngreso
             // 
@@ -324,7 +326,7 @@
             this.fechaIngreso.HeaderText = "Fecha de Ingreso";
             this.fechaIngreso.Name = "fechaIngreso";
             this.fechaIngreso.ReadOnly = true;
-            this.fechaIngreso.Width = 115;
+            this.fechaIngreso.Width = 120;
             // 
             // frmUsuario
             // 

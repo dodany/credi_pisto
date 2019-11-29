@@ -115,6 +115,7 @@ namespace Pisto_credito.src.BD
                 dta.SelectCommand = cmd;
                 dta.Fill(dt);
 
+
                 //Cerrando todas las conexion
                 con.Close();
                 cmd.Dispose();
