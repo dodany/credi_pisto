@@ -37,6 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dtgProspecto = new System.Windows.Forms.DataGridView();
+            this.idProspecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Domicilio = new System.Windows.Forms.TextBox();
             this.txt_Trabajo = new System.Windows.Forms.TextBox();
             this.btn_VerficarDomicilio = new System.Windows.Forms.Button();
@@ -49,12 +55,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txt_dpi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProspecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProspecto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,12 +71,13 @@
             // 
             // btn_desaprobar
             // 
-            this.btn_desaprobar.Location = new System.Drawing.Point(443, 431);
+            this.btn_desaprobar.Location = new System.Drawing.Point(445, 447);
             this.btn_desaprobar.Name = "btn_desaprobar";
             this.btn_desaprobar.Size = new System.Drawing.Size(186, 55);
             this.btn_desaprobar.TabIndex = 45;
             this.btn_desaprobar.Text = "Desaprobar Evaluacion";
             this.btn_desaprobar.UseVisualStyleBackColor = true;
+            this.btn_desaprobar.Visible = false;
             this.btn_desaprobar.Click += new System.EventHandler(this.btn_desaprobar_Click);
             // 
             // btn_Continuar
@@ -91,12 +92,13 @@
             // 
             // btn_Aprobar
             // 
-            this.btn_Aprobar.Location = new System.Drawing.Point(241, 431);
+            this.btn_Aprobar.Location = new System.Drawing.Point(243, 447);
             this.btn_Aprobar.Name = "btn_Aprobar";
             this.btn_Aprobar.Size = new System.Drawing.Size(186, 55);
             this.btn_Aprobar.TabIndex = 43;
             this.btn_Aprobar.Text = "Aprobar Evaluacion";
             this.btn_Aprobar.UseVisualStyleBackColor = true;
+            this.btn_Aprobar.Visible = false;
             this.btn_Aprobar.Click += new System.EventHandler(this.btn_Aprobar_Click);
             // 
             // label13
@@ -153,6 +155,52 @@
             this.dtgProspecto.TabIndex = 51;
             this.dtgProspecto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProspecto_CellContentClick);
             this.dtgProspecto.SelectionChanged += new System.EventHandler(this.dtgProspecto_SelectionChanged);
+            // 
+            // idProspecto
+            // 
+            this.idProspecto.DataPropertyName = "idProspecto";
+            this.idProspecto.HeaderText = "idProspecto";
+            this.idProspecto.Name = "idProspecto";
+            this.idProspecto.ReadOnly = true;
+            this.idProspecto.Width = 80;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombres:";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 120;
+            // 
+            // telTrabajo
+            // 
+            this.telTrabajo.DataPropertyName = "telTrabajo";
+            this.telTrabajo.HeaderText = "Tel. Trabajo";
+            this.telTrabajo.Name = "telTrabajo";
+            this.telTrabajo.ReadOnly = true;
+            // 
+            // telDomicilio
+            // 
+            this.telDomicilio.DataPropertyName = "telDomicilio";
+            this.telDomicilio.HeaderText = "Tel. Domicilio";
+            this.telDomicilio.Name = "telDomicilio";
+            this.telDomicilio.ReadOnly = true;
+            // 
+            // trabajo
+            // 
+            this.trabajo.DataPropertyName = "trabajo";
+            this.trabajo.HeaderText = "Trabajo";
+            this.trabajo.Name = "trabajo";
+            this.trabajo.ReadOnly = true;
+            this.trabajo.Width = 120;
+            // 
+            // domicilio
+            // 
+            this.domicilio.DataPropertyName = "domicilio";
+            this.domicilio.HeaderText = "Domicilio";
+            this.domicilio.Name = "domicilio";
+            this.domicilio.ReadOnly = true;
+            this.domicilio.Width = 120;
             // 
             // txt_Domicilio
             // 
@@ -267,57 +315,11 @@
             this.label4.TabIndex = 62;
             this.label4.Text = "DPI:";
             // 
-            // domicilio
-            // 
-            this.domicilio.DataPropertyName = "domicilio";
-            this.domicilio.HeaderText = "Domicilio";
-            this.domicilio.Name = "domicilio";
-            this.domicilio.ReadOnly = true;
-            this.domicilio.Width = 120;
-            // 
-            // trabajo
-            // 
-            this.trabajo.DataPropertyName = "trabajo";
-            this.trabajo.HeaderText = "Trabajo";
-            this.trabajo.Name = "trabajo";
-            this.trabajo.ReadOnly = true;
-            this.trabajo.Width = 120;
-            // 
-            // telDomicilio
-            // 
-            this.telDomicilio.DataPropertyName = "telDomicilio";
-            this.telDomicilio.HeaderText = "Tel. Domicilio";
-            this.telDomicilio.Name = "telDomicilio";
-            this.telDomicilio.ReadOnly = true;
-            // 
-            // telTrabajo
-            // 
-            this.telTrabajo.DataPropertyName = "telTrabajo";
-            this.telTrabajo.HeaderText = "Tel. Trabajo";
-            this.telTrabajo.Name = "telTrabajo";
-            this.telTrabajo.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombres:";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 120;
-            // 
-            // idProspecto
-            // 
-            this.idProspecto.DataPropertyName = "idProspecto";
-            this.idProspecto.HeaderText = "idProspecto";
-            this.idProspecto.Name = "idProspecto";
-            this.idProspecto.ReadOnly = true;
-            this.idProspecto.Width = 80;
-            // 
             // frmEvaluacion2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 599);
+            this.ClientSize = new System.Drawing.Size(860, 540);
             this.Controls.Add(this.txt_dpi);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtgProspecto);
@@ -329,6 +331,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmEvaluacion2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Evaluacion 2";
             this.Load += new System.EventHandler(this.frmEvaluacion2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgProspecto)).EndInit();

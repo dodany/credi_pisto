@@ -40,92 +40,9 @@ namespace Pisto_credito.Interface
            
         }
        
-        private void seleccionarEvaluacion()
-        {
-            ArrayList parametros = new ArrayList();
-            ArrayList datos = new ArrayList();
+       
 
-
-            
-            //idPROSPECTO DE LA FILA SELECCIONADA   x
-            int idProspecto =  Convert.ToInt32(dtg_Prospectos.Rows[dtg_Prospectos.CurrentRow.Index].Cells[0].Value.ToString());
-            parametros.Add(idProspecto);
-            datos.Add("@idProspecto");  
-            
-            DataTable dt = new DataTable();
-
-            dt = cl.SelectWithParameters("sp_evaluacion2",17,parametros, datos);
-
-            DataTableReader reader = dt.CreateDataReader();
-            if (reader.HasRows)
-            {
-                reader.Read();
-                String estado = null;
-                estado = reader["estado"].ToString();
-
-                if (estado == "La evaluacion 1 fue completada, continúa proceso.")
-                {
-                    try
-                    {
-                        //iniciarEvaluacion2();
-                        MessageBox.Show("holi 2");
-                        frmEvaluacion2 frmEvalua2 = new frmEvaluacion2();
-                        frmEvalua2.Show();
-                        this.Hide();
-                    }
-                    catch (Exception)
-                    { 
-                        MessageBox.Show("Seleccione el prospecto a evaluar", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-
-                }
-                else if (estado == "La evaluacion 2 fue completada, continúa proceso.")
-                {
-                    try
-                    {
-                        MessageBox.Show("holi 3");
-                        // iniciarEvaluacion3();
-                        frmEvaluacion3 frmEvalua3 = new frmEvaluacion3();
-                        frmEvalua3.Show();
-                        this.Hide();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Seleccione el prospecto a evaluar", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                    }
-                }
-                else if (estado == "La evaluacion 3 fue completada. Credito Aprobado.")
-                {
-
-
-                    MessageBox.Show("Este prospecto ha concluido con exito el proceso de evaluación y ahora es un cliente. ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-                }
-                else if (estado == "")
-                {
-                    try
-                    {
-                        MessageBox.Show("holi 1");
-                        // iniciarEvaluacion1();
-                        frmEvaluacion1 frmEvalua1 = new frmEvaluacion1();
-                        frmEvalua1.Show();
-                        this.Hide();
-                    }
-                    catch (Exception)
-                    {
-                       
-                        MessageBox.Show("Seleccione el prospecto a evaluar", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                }
-                else if (estado == "Evaluación desaprobada.Solicitud de Credito Denegada.")
-                {
-                    MessageBox.Show("El proceso del prospecto seleccionado ha sido cancelado, la solicitud del mismo ha sido denegada.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
+        
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

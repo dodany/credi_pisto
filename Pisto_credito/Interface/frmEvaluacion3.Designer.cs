@@ -390,6 +390,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmEvaluacion3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Evaluacion 3";
             this.Load += new System.EventHandler(this.frmEvaluacion3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

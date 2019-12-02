@@ -28,8 +28,9 @@ namespace Pisto_credito.Interface
             frmListaProspectos frmList = new frmListaProspectos();
             frmList.Show();
             this.Hide();
-            frmList.dtg_Prospectos.DataSource = cl.Select("sp_evaluacion1",12);
             frmList.label1.Text = "Evaluacion 1";
+            frmList.dtg_Prospectos.DataSource = cl.Select("sp_evaluacion1",12);
+          
            
         }
 
@@ -38,8 +39,9 @@ namespace Pisto_credito.Interface
             frmListaProspectos frmList = new frmListaProspectos();
             frmList.Show();
             this.Hide();
-            frmList.dtg_Prospectos.DataSource = cl.Select("sp_evaluacion2", 16);
             frmList.label1.Text = "Evaluacion 2";
+            frmList.dtg_Prospectos.DataSource = cl.Select("sp_evaluacion2", 16);
+          
 
         }
 
@@ -48,8 +50,9 @@ namespace Pisto_credito.Interface
             frmListaProspectos frmList = new frmListaProspectos();
             frmList.Show();
             this.Hide();
-            frmList.dtg_Prospectos.DataSource = cl.Select("sp_evaluacion3", 12);
             frmList.label1.Text = "Evaluacion 3";
+            frmList.dtg_Prospectos.DataSource = cl.Select("sp_evaluacion3",12);
+           
 
         }
     }

@@ -87,6 +87,7 @@
             this.btn_Continuar.TabIndex = 40;
             this.btn_Continuar.Text = "Continuar Evaluando";
             this.btn_Continuar.UseVisualStyleBackColor = true;
+            this.btn_Continuar.Visible = false;
             this.btn_Continuar.Click += new System.EventHandler(this.btn_Continuar_Click);
             // 
             // label1
@@ -483,7 +484,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 574);
+            this.ClientSize = new System.Drawing.Size(1004, 560);
             this.Controls.Add(this.dtgProspecto);
             this.Controls.Add(this.txt_edad);
             this.Controls.Add(this.label12);
@@ -504,6 +505,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmEvaluacion1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "3";
             this.Load += new System.EventHandler(this.frmEvaluacion1_Load);
             this.groupBox2.ResumeLayout(false);

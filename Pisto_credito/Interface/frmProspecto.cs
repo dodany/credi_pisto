@@ -124,8 +124,8 @@ namespace Pisto_credito
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
           
+
 
             try
             {

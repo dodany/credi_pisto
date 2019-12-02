@@ -64,12 +64,13 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(657, 557);
+            this.btnEliminar.Location = new System.Drawing.Point(1135, 567);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(175, 43);
+            this.btnEliminar.Size = new System.Drawing.Size(133, 32);
             this.btnEliminar.TabIndex = 46;
             this.btnEliminar.Text = "Eliminar Cliente";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dtgCliente
             // 
@@ -220,7 +221,7 @@
             // 
             // btn_Pagos
             // 
-            this.btn_Pagos.Location = new System.Drawing.Point(385, 557);
+            this.btn_Pagos.Location = new System.Drawing.Point(561, 556);
             this.btn_Pagos.Name = "btn_Pagos";
             this.btn_Pagos.Size = new System.Drawing.Size(204, 43);
             this.btn_Pagos.TabIndex = 50;

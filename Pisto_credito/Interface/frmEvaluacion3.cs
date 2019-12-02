@@ -26,7 +26,7 @@ namespace Pisto_credito.Interface
         {
             llenarDTG_Prospecto();
             cargarDatos();
-            
+
 
         }
 
@@ -39,14 +39,25 @@ namespace Pisto_credito.Interface
             parametro.Add(idProspect);
 
             dtgProspecto.DataSource = cl.SelectWithParameters("sp_evaluacion3", 9, parametro, dato);
-        
+
             dataGridView1.DataSource = cl.SelectWithParameters("sp_evaluacion3", 11, parametro, dato);
 
 
         }
+        public int ObtenerIDProducto()
+        {
+
+            int idProducto;
+            DataGridViewRow row = dtgProspecto.CurrentRow;
+            idProducto = Convert.ToInt32(row.Cells["idProducto"].Value);//Enviar idProducto del grid hacia la confiramcion de lac cantidad
+            return idProducto;
+        }
         private void btn_Aprobar_Click(object sender, EventArgs e)
         {
-            
+           
+
+
+
             try
             {
                 DialogResult result1 = MessageBox.Show("¿Esta seguro que la informacion es veridica y aprobar esta evaluación? El prospecto sera ingresado como nuevo cliente.",
@@ -57,12 +68,12 @@ namespace Pisto_credito.Interface
                 {
                     //try {  try { } } catch { }
 
+                   
                     aprobarEvaluacion();
                     //frmCliente frmClientes = new frmCliente();
                     //frmClientes.Show();
-
-                    crearPlanPago();
                     agregarCliente();
+                    crearPlanPago();
                     //frmClientes.dtgCliente.DataSource = cl.Select("sp_Cliente", 1);
 
 
@@ -71,6 +82,10 @@ namespace Pisto_credito.Interface
                     this.Hide();
                     frmConfirmacionCliente frmConfirmacion = new frmConfirmacionCliente();
                     frmConfirmacion.txt_idProspecto.Text = txt_idProspecto.Text;
+                  
+
+                    frmConfirmacion.idProducto = ObtenerIDProducto();
+
                     frmConfirmacion.Show();
                     //MessageBox.Show("Ingrese la cantidad que el prospecto solicita", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -84,7 +99,7 @@ namespace Pisto_credito.Interface
                 MessageBox.Show("¡Error! La operacion no se ha completado con exito!",
                  "Operacion Fallida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
+
         }
 
         /// <summary>
@@ -98,10 +113,13 @@ namespace Pisto_credito.Interface
             ArrayList dato = new ArrayList();
 
             dato.Add("@idCliente");
+            dato.Add("@idProducto");
             parametro.Add(txt_idProspecto.Text);
+            parametro.Add(ObtenerIDProducto());
+            
 
 
-            cl.Insert("sp_planPagos",0, parametro, dato,false);
+            cl.Insert("sp_planPagos", 0, parametro, dato, false);
         }
         public void aprobarEvaluacion()
         {
@@ -165,11 +183,17 @@ namespace Pisto_credito.Interface
 
         private void cargarDatos()
         {
+           
             DataGridViewRow row = dtgProspecto.CurrentRow;
 
             txt_Edad.Text = Convert.ToString(row.Cells["edad"].Value);
             txt_idProspecto.Text = Convert.ToString(row.Cells["idProspecto"].Value);
+           
+
+
         }
+
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -196,7 +220,6 @@ namespace Pisto_credito.Interface
                 {
                     MessageBox.Show("No son permitidos los números negativos. ¡Por favor llenarlos correctamente!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-              
                 else
                 {
 
